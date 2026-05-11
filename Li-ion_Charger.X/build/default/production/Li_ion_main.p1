@@ -1,0 +1,2148 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"17 ./PWM.h
+[; ;./PWM.h: 17: {
+[s S134 `ui 1 `ui 1 `uc 1 ]
+[n S134 . Period Ton CCP ]
+"90 Li_ion_main.c
+[; ;Li_ion_main.c: 90: char State=Wait_Charge;
+[c E1236 0 1 2 3 .. ]
+[n E1236 State Wait_Charge Current_Charge Volt_Charge Full_Charge  ]
+"92
+[; ;Li_ion_main.c: 92: struct{
+[s S135 :1 `uc 1 :1 `uc 1 ]
+[n S135 . Change Next ]
+[p mainexit ]
+"15 ./TMR0.h
+[; ;./TMR0.h: 15: void TIM0_init(void);
+[v _TIM0_init `(v ~T0 @X0 0 ef ]
+"16
+[; ;./TMR0.h: 16: void TIM0_Start(void);
+[v _TIM0_Start `(v ~T0 @X0 0 ef ]
+"3273 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 3273: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
+[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+"1399
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1399: extern volatile unsigned char TRISB __attribute__((address(0x086)));
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"1461
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1461: extern volatile unsigned char TRISC __attribute__((address(0x087)));
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"3229
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 3229: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
+[v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
+"1337
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1337: extern volatile unsigned char TRISA __attribute__((address(0x085)));
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"1166
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1166: extern volatile unsigned char ADCON0 __attribute__((address(0x01F)));
+[v _ADCON0 `Vuc ~T0 @X0 0 e@31 ]
+"2819
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 2819: extern volatile unsigned char ADCON1 __attribute__((address(0x09F)));
+[v _ADCON1 `Vuc ~T0 @X0 0 e@159 ]
+"129 Li_ion_main.c
+[; ;Li_ion_main.c: 129:     PWM_1.CCP=CCPM1;
+[c E1207 1 2 .. ]
+[n E1207 . CCPM1 CCPM2  ]
+"23 ./PWM.h
+[; ;./PWM.h: 23: void PWM_Init(PWM_TypeDef *PWMData);
+[v _PWM_Init `(v ~T0 @X0 0 ef1`*S134 ]
+"24
+[; ;./PWM.h: 24: void PWM_Start(void);
+[v _PWM_Start `(v ~T0 @X0 0 ef ]
+"100 Li_ion_main.c
+[; ;Li_ion_main.c: 100: void WaitCharge_Function(void);
+[v _WaitCharge_Function `(v ~T0 @X0 0 ef ]
+"101
+[; ;Li_ion_main.c: 101: void CurrentCharge_Function(void);
+[v _CurrentCharge_Function `(v ~T0 @X0 0 ef ]
+"102
+[; ;Li_ion_main.c: 102: void VoltCharge_Function(void);
+[v _VoltCharge_Function `(v ~T0 @X0 0 ef ]
+"103
+[; ;Li_ion_main.c: 103: void FullCharge_Function(void);
+[v _FullCharge_Function `(v ~T0 @X0 0 ef ]
+"848 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 848: extern volatile unsigned char CCPR1L __attribute__((address(0x015)));
+[v _CCPR1L `Vuc ~T0 @X0 0 e@21 ]
+"862
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 862: extern volatile unsigned char CCP1CON __attribute__((address(0x017)));
+[v _CCP1CON `Vuc ~T0 @X0 0 e@23 ]
+"290
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"1159
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1159: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
+"2812
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 2812: extern volatile unsigned char ADRESL __attribute__((address(0x09E)));
+[v _ADRESL `Vuc ~T0 @X0 0 e@158 ]
+[v F1196 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files\Microchip\xc8\v2.20\pic\include\pic.h
+[v __delay `JF1196 ~T0 @X0 0 e ]
+[p i __delay ]
+"99 Li_ion_main.c
+[; ;Li_ion_main.c: 99: void Data2Array(char* d_Array,unsigned int data);
+[v _Data2Array `(v ~T0 @X0 0 ef2`*uc`ui ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"380 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 380: extern volatile unsigned char INTCON __attribute__((address(0x00B)));
+[v _INTCON `Vuc ~T0 @X0 0 e@11 ]
+"98 Li_ion_main.c
+[; ;Li_ion_main.c: 98: void Display_Segment(char* Display_Array);
+[v _Display_Segment `(v ~T0 @X0 0 ef1`*uc ]
+"228 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"54 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 54: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"61
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 61: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"68
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 68: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"75
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 75: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"161
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 161: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"168
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 168: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"230
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 230: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"292
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 292: __asm("PORTC equ 07h");
+[; <" PORTC equ 07h ;# ">
+"354
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 354: __asm("PORTE equ 09h");
+[; <" PORTE equ 09h ;# ">
+"375
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 375: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"382
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 382: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"460
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 460: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"516
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 516: __asm("PIR2 equ 0Dh");
+[; <" PIR2 equ 0Dh ;# ">
+"573
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 573: __asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+"580
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 580: __asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+"587
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 587: __asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+"594
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 594: __asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+"688
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 688: __asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+"695
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 695: __asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+"766
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 766: __asm("SSPBUF equ 013h");
+[; <" SSPBUF equ 013h ;# ">
+"773
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 773: __asm("SSPCON equ 014h");
+[; <" SSPCON equ 014h ;# ">
+"843
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 843: __asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+"850
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 850: __asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+"857
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 857: __asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+"864
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 864: __asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+"961
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 961: __asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+"1056
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1056: __asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+"1063
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1063: __asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+"1070
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1070: __asm("CCPR2 equ 01Bh");
+[; <" CCPR2 equ 01Bh ;# ">
+"1077
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1077: __asm("CCPR2L equ 01Bh");
+[; <" CCPR2L equ 01Bh ;# ">
+"1084
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1084: __asm("CCPR2H equ 01Ch");
+[; <" CCPR2H equ 01Ch ;# ">
+"1091
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1091: __asm("CCP2CON equ 01Dh");
+[; <" CCP2CON equ 01Dh ;# ">
+"1161
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1161: __asm("ADRESH equ 01Eh");
+[; <" ADRESH equ 01Eh ;# ">
+"1168
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1168: __asm("ADCON0 equ 01Fh");
+[; <" ADCON0 equ 01Fh ;# ">
+"1269
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1269: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"1339
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1339: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"1401
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1401: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"1463
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1463: __asm("TRISC equ 087h");
+[; <" TRISC equ 087h ;# ">
+"1525
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1525: __asm("TRISE equ 089h");
+[; <" TRISE equ 089h ;# ">
+"1546
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1546: __asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+"1602
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1602: __asm("PIE2 equ 08Dh");
+[; <" PIE2 equ 08Dh ;# ">
+"1659
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1659: __asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+"1706
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1706: __asm("OSCCON equ 08Fh");
+[; <" OSCCON equ 08Fh ;# ">
+"1771
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1771: __asm("OSCTUNE equ 090h");
+[; <" OSCTUNE equ 090h ;# ">
+"1823
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1823: __asm("SSPCON2 equ 091h");
+[; <" SSPCON2 equ 091h ;# ">
+"1885
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1885: __asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+"1892
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1892: __asm("SSPADD equ 093h");
+[; <" SSPADD equ 093h ;# ">
+"1899
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1899: __asm("SSPMSK equ 093h");
+[; <" SSPMSK equ 093h ;# ">
+"1904
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 1904: __asm("MSK equ 093h");
+[; <" MSK equ 093h ;# ">
+"2021
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 2021: __asm("SSPSTAT equ 094h");
+[; <" SSPSTAT equ 094h ;# ">
+"2190
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 2190: __asm("WPUB equ 095h");
+[; <" WPUB equ 095h ;# ">
+"2260
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 2260: __asm("IOCB equ 096h");
+[; <" IOCB equ 096h ;# ">
+"2330
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 2330: __asm("VRCON equ 097h");
+[; <" VRCON equ 097h ;# ">
+"2400
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 2400: __asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+"2486
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 2486: __asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+"2548
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 2548: __asm("SPBRGH equ 09Ah");
+[; <" SPBRGH equ 09Ah ;# ">
+"2618
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 2618: __asm("PWM1CON equ 09Bh");
+[; <" PWM1CON equ 09Bh ;# ">
+"2688
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 2688: __asm("ECCPAS equ 09Ch");
+[; <" ECCPAS equ 09Ch ;# ">
+"2770
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 2770: __asm("PSTRCON equ 09Dh");
+[; <" PSTRCON equ 09Dh ;# ">
+"2814
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 2814: __asm("ADRESL equ 09Eh");
+[; <" ADRESL equ 09Eh ;# ">
+"2821
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 2821: __asm("ADCON1 equ 09Fh");
+[; <" ADCON1 equ 09Fh ;# ">
+"2855
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 2855: __asm("WDTCON equ 0105h");
+[; <" WDTCON equ 0105h ;# ">
+"2908
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 2908: __asm("CM1CON0 equ 0107h");
+[; <" CM1CON0 equ 0107h ;# ">
+"2973
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 2973: __asm("CM2CON0 equ 0108h");
+[; <" CM2CON0 equ 0108h ;# ">
+"3038
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 3038: __asm("CM2CON1 equ 0109h");
+[; <" CM2CON1 equ 0109h ;# ">
+"3089
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 3089: __asm("EEDATA equ 010Ch");
+[; <" EEDATA equ 010Ch ;# ">
+"3094
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 3094: __asm("EEDAT equ 010Ch");
+[; <" EEDAT equ 010Ch ;# ">
+"3101
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 3101: __asm("EEADR equ 010Dh");
+[; <" EEADR equ 010Dh ;# ">
+"3108
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 3108: __asm("EEDATH equ 010Eh");
+[; <" EEDATH equ 010Eh ;# ">
+"3115
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 3115: __asm("EEADRH equ 010Fh");
+[; <" EEADRH equ 010Fh ;# ">
+"3122
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 3122: __asm("SRCON equ 0185h");
+[; <" SRCON equ 0185h ;# ">
+"3179
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 3179: __asm("BAUDCTL equ 0187h");
+[; <" BAUDCTL equ 0187h ;# ">
+"3231
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 3231: __asm("ANSEL equ 0188h");
+[; <" ANSEL equ 0188h ;# ">
+"3275
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 3275: __asm("ANSELH equ 0189h");
+[; <" ANSELH equ 0189h ;# ">
+"3325
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 3325: __asm("EECON1 equ 018Ch");
+[; <" EECON1 equ 018Ch ;# ">
+"3370
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h: 3370: __asm("EECON2 equ 018Dh");
+[; <" EECON2 equ 018Dh ;# ">
+"12 Li_ion_main.c
+[p x FOSC = INTRC_NOCLKOUT ]
+"13
+[p x WDTE = OFF ]
+"14
+[p x PWRTE = OFF ]
+"15
+[p x MCLRE = OFF ]
+"16
+[p x CP = OFF ]
+"17
+[p x CPD = OFF ]
+"18
+[p x BOREN = ON ]
+"19
+[p x IESO = ON ]
+"20
+[p x FCMEN = ON ]
+"21
+[p x LVP = OFF ]
+"24
+[p x BOR4V = BOR40V ]
+"25
+[p x WRT = OFF ]
+"34
+[; ;Li_ion_main.c: 34: PWM_TypeDef PWM_1;
+[v _PWM_1 `S134 ~T0 @X0 1 e ]
+"62
+[; ;Li_ion_main.c: 62: const char Segment_Tab[24]={ (1<<5) | (1<<7) |(1<<1) | (1<<3) | (1<<4) | (1<<6) ,
+[v _Segment_Tab `Cuc ~T0 @X0 -> 24 `i e ]
+[i _Segment_Tab
+:U ..
+-> | | | | | << -> 1 `i -> 5 `i << -> 1 `i -> 7 `i << -> 1 `i -> 1 `i << -> 1 `i -> 3 `i << -> 1 `i -> 4 `i << -> 1 `i -> 6 `i `uc
+-> | << -> 1 `i -> 7 `i << -> 1 `i -> 1 `i `uc
+-> | | | | << -> 1 `i -> 5 `i << -> 1 `i -> 7 `i << -> 1 `i -> 3 `i << -> 1 `i -> 4 `i << -> 1 `i -> 0 `i `uc
+-> | | | | << -> 1 `i -> 5 `i << -> 1 `i -> 7 `i << -> 1 `i -> 1 `i << -> 1 `i -> 3 `i << -> 1 `i -> 0 `i `uc
+-> | | | << -> 1 `i -> 7 `i << -> 1 `i -> 1 `i << -> 1 `i -> 6 `i << -> 1 `i -> 0 `i `uc
+-> | | | | << -> 1 `i -> 5 `i << -> 1 `i -> 1 `i << -> 1 `i -> 3 `i << -> 1 `i -> 6 `i << -> 1 `i -> 0 `i `uc
+-> | | | | | << -> 1 `i -> 5 `i << -> 1 `i -> 1 `i << -> 1 `i -> 3 `i << -> 1 `i -> 4 `i << -> 1 `i -> 6 `i << -> 1 `i -> 0 `i `uc
+-> | | << -> 1 `i -> 5 `i << -> 1 `i -> 7 `i << -> 1 `i -> 1 `i `uc
+-> | | | | | | << -> 1 `i -> 5 `i << -> 1 `i -> 7 `i << -> 1 `i -> 1 `i << -> 1 `i -> 3 `i << -> 1 `i -> 4 `i << -> 1 `i -> 6 `i << -> 1 `i -> 0 `i `uc
+-> | | | | | << -> 1 `i -> 5 `i << -> 1 `i -> 7 `i << -> 1 `i -> 1 `i << -> 1 `i -> 3 `i << -> 1 `i -> 6 `i << -> 1 `i -> 0 `i `uc
+-> | | | << -> 1 `i -> 1 `i << -> 1 `i -> 3 `i << -> 1 `i -> 4 `i << -> 1 `i -> 0 `i `uc
+-> | | << -> 1 `i -> 1 `i << -> 1 `i -> 3 `i << -> 1 `i -> 4 `i `uc
+-> | << -> 1 `i -> 4 `i << -> 1 `i -> 0 `i `uc
+-> | | | | << -> 1 `i -> 7 `i << -> 1 `i -> 1 `i << -> 1 `i -> 3 `i << -> 1 `i -> 4 `i << -> 1 `i -> 0 `i `uc
+-> << -> 1 `i -> 0 `i `uc
+-> | | | | << -> 1 `i -> 5 `i << -> 1 `i -> 1 `i << -> 1 `i -> 3 `i << -> 1 `i -> 6 `i << -> 1 `i -> 0 `i `uc
+-> | | | | << -> 1 `i -> 5 `i << -> 1 `i -> 7 `i << -> 1 `i -> 4 `i << -> 1 `i -> 6 `i << -> 1 `i -> 0 `i `uc
+-> | | << -> 1 `i -> 3 `i << -> 1 `i -> 4 `i << -> 1 `i -> 6 `i `uc
+-> << -> 1 `i -> 4 `i `uc
+-> | << -> 1 `i -> 4 `i << -> 1 `i -> 5 `i `uc
+-> | | << -> 1 `i -> 4 `i << -> 1 `i -> 5 `i << -> 1 `i -> 6 `i `uc
+-> | | | << -> 1 `i -> 4 `i << -> 1 `i -> 5 `i << -> 1 `i -> 6 `i << -> 1 `i -> 7 `i `uc
+-> << -> 1 `i -> 3 `i `uc
+-> -> 0 `i `uc
+..
+]
+"87
+[; ;Li_ion_main.c: 87: char Display_Array[4]={1,2,3,19};
+[v _Display_Array `uc ~T0 @X0 -> 4 `i e ]
+[i _Display_Array
+:U ..
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+-> -> 3 `i `uc
+-> -> 19 `i `uc
+..
+]
+"88
+[; ;Li_ion_main.c: 88: char SolarFlag=0;
+[v _SolarFlag `uc ~T0 @X0 1 e ]
+[i _SolarFlag
+-> -> 0 `i `uc
+]
+"90
+[; ;Li_ion_main.c: 90: char State=Wait_Charge;
+[v _State `uc ~T0 @X0 1 e ]
+[i _State
+-> . `E1236 0 `uc
+]
+"91
+[; ;Li_ion_main.c: 91: unsigned int PWM_Value=0;
+[v _PWM_Value `ui ~T0 @X0 1 e ]
+[i _PWM_Value
+-> -> 0 `i `ui
+]
+"95
+[; ;Li_ion_main.c: 95: }Flag;
+[v _Flag `S135 ~T0 @X0 1 e ]
+"104
+[; ;Li_ion_main.c: 104: unsigned int AD_Value=0;
+[v _AD_Value `ui ~T0 @X0 1 e ]
+[i _AD_Value
+-> -> 0 `i `ui
+]
+"105
+[; ;Li_ion_main.c: 105: unsigned int Display_Volt=0;
+[v _Display_Volt `ui ~T0 @X0 1 e ]
+[i _Display_Volt
+-> -> 0 `i `ui
+]
+"106
+[; ;Li_ion_main.c: 106: unsigned int Display_Current=0;
+[v _Display_Current `ui ~T0 @X0 1 e ]
+[i _Display_Current
+-> -> 0 `i `ui
+]
+"108
+[; ;Li_ion_main.c: 108: char Display_Change=0;
+[v _Display_Change `uc ~T0 @X0 1 e ]
+[i _Display_Change
+-> -> 0 `i `uc
+]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"109
+[; ;Li_ion_main.c: 109: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"110
+[; ;Li_ion_main.c: 110: {
+{
+[e :U _main ]
+[f ]
+"111
+[; ;Li_ion_main.c: 111:     TIM0_init();
+[e ( _TIM0_init ..  ]
+"112
+[; ;Li_ion_main.c: 112:     TIM0_Start();
+[e ( _TIM0_Start ..  ]
+"113
+[; ;Li_ion_main.c: 113:     ANSELH=0;
+[e = _ANSELH -> -> 0 `i `uc ]
+"114
+[; ;Li_ion_main.c: 114:     TRISB =0;
+[e = _TRISB -> -> 0 `i `uc ]
+"115
+[; ;Li_ion_main.c: 115:     TRISC &= ~(0xF0);
+[e =& _TRISC -> ~ -> 240 `i `Vuc ]
+"117
+[; ;Li_ion_main.c: 117:     TRISC |= (1<<0);
+[e =| _TRISC -> << -> 1 `i -> 0 `i `Vuc ]
+"119
+[; ;Li_ion_main.c: 119:     ANSEL |= (1<<0);
+[e =| _ANSEL -> << -> 1 `i -> 0 `i `Vuc ]
+"120
+[; ;Li_ion_main.c: 120:     ANSEL |= (1<<1);
+[e =| _ANSEL -> << -> 1 `i -> 1 `i `Vuc ]
+"121
+[; ;Li_ion_main.c: 121:     TRISA |= (1<<0) | (1<<1);
+[e =| _TRISA -> | << -> 1 `i -> 0 `i << -> 1 `i -> 1 `i `Vuc ]
+"122
+[; ;Li_ion_main.c: 122:     ADCON0 |= (2<<6);
+[e =| _ADCON0 -> << -> 2 `i -> 6 `i `Vuc ]
+"123
+[; ;Li_ion_main.c: 123:     ADCON0 &= ~(0x0F<<2);
+[e =& _ADCON0 -> ~ << -> 15 `i -> 2 `i `Vuc ]
+"125
+[; ;Li_ion_main.c: 125:     ADCON0 |= (1<<2);
+[e =| _ADCON0 -> << -> 1 `i -> 2 `i `Vuc ]
+"126
+[; ;Li_ion_main.c: 126:     ADCON1 |=(1<<7);
+[e =| _ADCON1 -> << -> 1 `i -> 7 `i `Vuc ]
+"127
+[; ;Li_ion_main.c: 127:     ADCON0 |= (1<<0);
+[e =| _ADCON0 -> << -> 1 `i -> 0 `i `Vuc ]
+"129
+[; ;Li_ion_main.c: 129:     PWM_1.CCP=CCPM1;
+[e = . _PWM_1 2 -> . `E1207 0 `uc ]
+"130
+[; ;Li_ion_main.c: 130:     PWM_1.Period=1000;
+[e = . _PWM_1 0 -> -> 1000 `i `ui ]
+"131
+[; ;Li_ion_main.c: 131:     PWM_1.Ton=0;
+[e = . _PWM_1 1 -> -> 0 `i `ui ]
+"132
+[; ;Li_ion_main.c: 132:     PWM_Init(&PWM_1);
+[e ( _PWM_Init (1 &U _PWM_1 ]
+"133
+[; ;Li_ion_main.c: 133:     PWM_Start();
+[e ( _PWM_Start ..  ]
+"134
+[; ;Li_ion_main.c: 134:     while(1)
+[e :U 138 ]
+"135
+[; ;Li_ion_main.c: 135:     {
+{
+"136
+[; ;Li_ion_main.c: 136:         switch(State)
+[e $U 141  ]
+"137
+[; ;Li_ion_main.c: 137:         {
+{
+"138
+[; ;Li_ion_main.c: 138:             case Wait_Charge:
+[e :U 142 ]
+"139
+[; ;Li_ion_main.c: 139:                 WaitCharge_Function();
+[e ( _WaitCharge_Function ..  ]
+"140
+[; ;Li_ion_main.c: 140:                 break;
+[e $U 140  ]
+"141
+[; ;Li_ion_main.c: 141:             case Current_Charge:
+[e :U 143 ]
+"142
+[; ;Li_ion_main.c: 142:                 CurrentCharge_Function();
+[e ( _CurrentCharge_Function ..  ]
+"143
+[; ;Li_ion_main.c: 143:                 break;
+[e $U 140  ]
+"144
+[; ;Li_ion_main.c: 144:             case Volt_Charge:
+[e :U 144 ]
+"145
+[; ;Li_ion_main.c: 145:                 VoltCharge_Function();
+[e ( _VoltCharge_Function ..  ]
+"146
+[; ;Li_ion_main.c: 146:                 break;
+[e $U 140  ]
+"147
+[; ;Li_ion_main.c: 147:             case Full_Charge:
+[e :U 145 ]
+"148
+[; ;Li_ion_main.c: 148:                 FullCharge_Function();
+[e ( _FullCharge_Function ..  ]
+"149
+[; ;Li_ion_main.c: 149:                 break;
+[e $U 140  ]
+"150
+[; ;Li_ion_main.c: 150:             default:
+[e :U 146 ]
+"151
+[; ;Li_ion_main.c: 151:                 State=Wait_Charge;
+[e = _State -> . `E1236 0 `uc ]
+"152
+[; ;Li_ion_main.c: 152:                 break;
+[e $U 140  ]
+"153
+[; ;Li_ion_main.c: 153:         }
+}
+[e $U 140  ]
+[e :U 141 ]
+[e [\ -> _State `i , $ . `E1236 0 142
+ , $ . `E1236 1 143
+ , $ . `E1236 2 144
+ , $ . `E1236 3 145
+ 146 ]
+[e :U 140 ]
+"155
+[; ;Li_ion_main.c: 155:     }
+}
+[e :U 137 ]
+[e $U 138  ]
+[e :U 139 ]
+"156
+[; ;Li_ion_main.c: 156: }
+[e :UE 136 ]
+}
+"158
+[; ;Li_ion_main.c: 158: void WaitCharge_Function(void)
+[v _WaitCharge_Function `(v ~T0 @X0 1 ef ]
+"159
+[; ;Li_ion_main.c: 159: {
+{
+[e :U _WaitCharge_Function ]
+[f ]
+"160
+[; ;Li_ion_main.c: 160:     unsigned int Volt_Value=0;
+[v _Volt_Value `ui ~T0 @X0 1 a ]
+[e = _Volt_Value -> -> 0 `i `ui ]
+"161
+[; ;Li_ion_main.c: 161:     char Total_Count=0;
+[v _Total_Count `uc ~T0 @X0 1 a ]
+[e = _Total_Count -> -> 0 `i `uc ]
+"162
+[; ;Li_ion_main.c: 162:     Volt_Value=0;
+[e = _Volt_Value -> -> 0 `i `ui ]
+"163
+[; ;Li_ion_main.c: 163:     PWM_Value=0;
+[e = _PWM_Value -> -> 0 `i `ui ]
+"164
+[; ;Li_ion_main.c: 164:     CCPR1L = PWM_Value>>2;
+[e = _CCPR1L -> >> _PWM_Value -> 2 `i `uc ]
+"165
+[; ;Li_ion_main.c: 165:     CCP1CON= (PWM_Value &0x3)<<4 |
+[e = _CCP1CON -> | << & _PWM_Value -> -> 3 `i `ui -> 4 `i -> -> 12 `i `ui `uc ]
+"167
+[; ;Li_ion_main.c: 167:     while(State==Wait_Charge)
+[e $U 148  ]
+[e :U 149 ]
+"168
+[; ;Li_ion_main.c: 168:     {
+{
+"169
+[; ;Li_ion_main.c: 169:         if(!(PORTC & (1<<0)))
+[e $ ! ! != & -> _PORTC `i << -> 1 `i -> 0 `i -> 0 `i 151  ]
+"170
+[; ;Li_ion_main.c: 170:         {
+{
+"171
+[; ;Li_ion_main.c: 171:             SolarFlag=1;
+[e = _SolarFlag -> -> 1 `i `uc ]
+"172
+[; ;Li_ion_main.c: 172:             State=Current_Charge;
+[e = _State -> . `E1236 1 `uc ]
+"173
+[; ;Li_ion_main.c: 173:         }
+}
+[e $U 152  ]
+"174
+[; ;Li_ion_main.c: 174:         else
+[e :U 151 ]
+"175
+[; ;Li_ion_main.c: 175:         {
+{
+"176
+[; ;Li_ion_main.c: 176:             SolarFlag=0;
+[e = _SolarFlag -> -> 0 `i `uc ]
+"178
+[; ;Li_ion_main.c: 178:         }
+}
+[e :U 152 ]
+"179
+[; ;Li_ion_main.c: 179:         ADCON0 &= ~(0x0F<<2);
+[e =& _ADCON0 -> ~ << -> 15 `i -> 2 `i `Vuc ]
+"180
+[; ;Li_ion_main.c: 180:         ADCON0 |= (1<<2);
+[e =| _ADCON0 -> << -> 1 `i -> 2 `i `Vuc ]
+"181
+[; ;Li_ion_main.c: 181:         AD_Value=0;
+[e = _AD_Value -> -> 0 `i `ui ]
+"182
+[; ;Li_ion_main.c: 182:         for(char i=0;i<16;i++)
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 16 `i 153  ]
+[e $U 154  ]
+[e :U 153 ]
+"183
+[; ;Li_ion_main.c: 183:         {
+{
+"184
+[; ;Li_ion_main.c: 184:             ADCON0 |= (1<<1);
+[e =| _ADCON0 -> << -> 1 `i -> 1 `i `Vuc ]
+"185
+[; ;Li_ion_main.c: 185:             while(ADCON0 & (1<<1))
+[e $U 156  ]
+[e :U 157 ]
+"186
+[; ;Li_ion_main.c: 186:                 ;
+[e :U 156 ]
+"185
+[; ;Li_ion_main.c: 185:             while(ADCON0 & (1<<1))
+[e $ != & -> _ADCON0 `i << -> 1 `i -> 1 `i -> 0 `i 157  ]
+[e :U 158 ]
+"187
+[; ;Li_ion_main.c: 187:             AD_Value+=(int)ADRESH<<8 | ADRESL;
+[e =+ _AD_Value -> | << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+"188
+[; ;Li_ion_main.c: 188:             _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"189
+[; ;Li_ion_main.c: 189:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 16 `i 153  ]
+[e :U 154 ]
+}
+"190
+[; ;Li_ion_main.c: 190:         Volt_Value+=(AD_Value>>4);
+[e =+ _Volt_Value >> _AD_Value -> 4 `i ]
+"191
+[; ;Li_ion_main.c: 191:         Total_Count++;
+[e ++ _Total_Count -> -> 1 `i `uc ]
+"192
+[; ;Li_ion_main.c: 192:         if(Total_Count>=4)
+[e $ ! >= -> _Total_Count `i -> 4 `i 159  ]
+"193
+[; ;Li_ion_main.c: 193:         {
+{
+"194
+[; ;Li_ion_main.c: 194:             Total_Count=0;
+[e = _Total_Count -> -> 0 `i `uc ]
+"195
+[; ;Li_ion_main.c: 195:             Volt_Value=Volt_Value>>2;
+[e = _Volt_Value >> _Volt_Value -> 2 `i ]
+"196
+[; ;Li_ion_main.c: 196:             Display_Volt=((long)140*Volt_Value)/512;
+[e = _Display_Volt -> / * -> -> 140 `i `l -> _Volt_Value `l -> -> 512 `i `l `ui ]
+"197
+[; ;Li_ion_main.c: 197:             Data2Array(Display_Array,Display_Volt);
+[e ( _Data2Array (2 , &U _Display_Array _Display_Volt ]
+"198
+[; ;Li_ion_main.c: 198:             Volt_Value=0;
+[e = _Volt_Value -> -> 0 `i `ui ]
+"199
+[; ;Li_ion_main.c: 199:         }
+}
+[e :U 159 ]
+"200
+[; ;Li_ion_main.c: 200:         if(Display_Volt >=120)
+[e $ ! >= _Display_Volt -> -> 120 `i `ui 160  ]
+"201
+[; ;Li_ion_main.c: 201:         {
+{
+"202
+[; ;Li_ion_main.c: 202:             Display_Array[3] = 21;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 21 `i `uc ]
+"203
+[; ;Li_ion_main.c: 203:         }
+}
+[e $U 161  ]
+"204
+[; ;Li_ion_main.c: 204:         else if(Display_Volt >= 114)
+[e :U 160 ]
+[e $ ! >= _Display_Volt -> -> 114 `i `ui 162  ]
+"205
+[; ;Li_ion_main.c: 205:         {
+{
+"206
+[; ;Li_ion_main.c: 206:             Display_Array[3] = 20;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 20 `i `uc ]
+"207
+[; ;Li_ion_main.c: 207:         }
+}
+[e $U 163  ]
+"208
+[; ;Li_ion_main.c: 208:         else if(Display_Volt >= 108)
+[e :U 162 ]
+[e $ ! >= _Display_Volt -> -> 108 `i `ui 164  ]
+"209
+[; ;Li_ion_main.c: 209:         {
+{
+"210
+[; ;Li_ion_main.c: 210:             Display_Array[3] = 19;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 19 `i `uc ]
+"211
+[; ;Li_ion_main.c: 211:         }
+}
+[e $U 165  ]
+"212
+[; ;Li_ion_main.c: 212:         else if(Display_Volt >= 102)
+[e :U 164 ]
+[e $ ! >= _Display_Volt -> -> 102 `i `ui 166  ]
+"213
+[; ;Li_ion_main.c: 213:         {
+{
+"214
+[; ;Li_ion_main.c: 214:             Display_Array[3] = 18;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 18 `i `uc ]
+"215
+[; ;Li_ion_main.c: 215:         }
+}
+[e $U 167  ]
+"216
+[; ;Li_ion_main.c: 216:         else
+[e :U 166 ]
+"217
+[; ;Li_ion_main.c: 217:         {
+{
+"218
+[; ;Li_ion_main.c: 218:             Display_Array[3] = 23;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 23 `i `uc ]
+"219
+[; ;Li_ion_main.c: 219:         }
+}
+[e :U 167 ]
+[e :U 165 ]
+[e :U 163 ]
+[e :U 161 ]
+"221
+[; ;Li_ion_main.c: 221:     }
+}
+[e :U 148 ]
+"167
+[; ;Li_ion_main.c: 167:     while(State==Wait_Charge)
+[e $ == -> _State `i -> . `E1236 0 `i 149  ]
+[e :U 150 ]
+"222
+[; ;Li_ion_main.c: 222: }
+[e :UE 147 ]
+}
+"224
+[; ;Li_ion_main.c: 224: void CurrentCharge_Function(void)
+[v _CurrentCharge_Function `(v ~T0 @X0 1 ef ]
+"225
+[; ;Li_ion_main.c: 225: {
+{
+[e :U _CurrentCharge_Function ]
+[f ]
+"226
+[; ;Li_ion_main.c: 226:     unsigned int Volt_Value=0;
+[v _Volt_Value `ui ~T0 @X0 1 a ]
+[e = _Volt_Value -> -> 0 `i `ui ]
+"227
+[; ;Li_ion_main.c: 227:     unsigned int Current_Value=0;
+[v _Current_Value `ui ~T0 @X0 1 a ]
+[e = _Current_Value -> -> 0 `i `ui ]
+"228
+[; ;Li_ion_main.c: 228:     char Total_Count=0;
+[v _Total_Count `uc ~T0 @X0 1 a ]
+[e = _Total_Count -> -> 0 `i `uc ]
+"229
+[; ;Li_ion_main.c: 229:     char C_Count=0;
+[v _C_Count `uc ~T0 @X0 1 a ]
+[e = _C_Count -> -> 0 `i `uc ]
+"230
+[; ;Li_ion_main.c: 230:     PWM_Value=0;
+[e = _PWM_Value -> -> 0 `i `ui ]
+"231
+[; ;Li_ion_main.c: 231:     CCPR1L = PWM_Value>>2;
+[e = _CCPR1L -> >> _PWM_Value -> 2 `i `uc ]
+"232
+[; ;Li_ion_main.c: 232:     CCP1CON= (PWM_Value &0x3)<<4 |
+[e = _CCP1CON -> | << & _PWM_Value -> -> 3 `i `ui -> 4 `i -> -> 12 `i `ui `uc ]
+"234
+[; ;Li_ion_main.c: 234:     while(State==Current_Charge)
+[e $U 169  ]
+[e :U 170 ]
+"235
+[; ;Li_ion_main.c: 235:     {
+{
+"236
+[; ;Li_ion_main.c: 236:         if(!(PORTC & (1<<0)))
+[e $ ! ! != & -> _PORTC `i << -> 1 `i -> 0 `i -> 0 `i 172  ]
+"237
+[; ;Li_ion_main.c: 237:         {
+{
+"238
+[; ;Li_ion_main.c: 238:             SolarFlag=1;
+[e = _SolarFlag -> -> 1 `i `uc ]
+"239
+[; ;Li_ion_main.c: 239:         }
+}
+[e $U 173  ]
+"240
+[; ;Li_ion_main.c: 240:         else
+[e :U 172 ]
+"241
+[; ;Li_ion_main.c: 241:         {
+{
+"242
+[; ;Li_ion_main.c: 242:             SolarFlag=0;
+[e = _SolarFlag -> -> 0 `i `uc ]
+"243
+[; ;Li_ion_main.c: 243:             State=Wait_Charge;
+[e = _State -> . `E1236 0 `uc ]
+"244
+[; ;Li_ion_main.c: 244:         }
+}
+[e :U 173 ]
+"245
+[; ;Li_ion_main.c: 245:         ADCON0 &= ~(0x0F<<2);
+[e =& _ADCON0 -> ~ << -> 15 `i -> 2 `i `Vuc ]
+"246
+[; ;Li_ion_main.c: 246:         ADCON0 |= (0<<2);
+[e =| _ADCON0 -> << -> 0 `i -> 2 `i `Vuc ]
+"247
+[; ;Li_ion_main.c: 247:         AD_Value=0;
+[e = _AD_Value -> -> 0 `i `ui ]
+"248
+[; ;Li_ion_main.c: 248:         for(char i=0;i<16;i++)
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 16 `i 174  ]
+[e $U 175  ]
+[e :U 174 ]
+"249
+[; ;Li_ion_main.c: 249:         {
+{
+"250
+[; ;Li_ion_main.c: 250:             ADCON0 |= (1<<1);
+[e =| _ADCON0 -> << -> 1 `i -> 1 `i `Vuc ]
+"251
+[; ;Li_ion_main.c: 251:             while(ADCON0 & (1<<1))
+[e $U 177  ]
+[e :U 178 ]
+"252
+[; ;Li_ion_main.c: 252:                 ;
+[e :U 177 ]
+"251
+[; ;Li_ion_main.c: 251:             while(ADCON0 & (1<<1))
+[e $ != & -> _ADCON0 `i << -> 1 `i -> 1 `i -> 0 `i 178  ]
+[e :U 179 ]
+"253
+[; ;Li_ion_main.c: 253:             AD_Value+=(int)ADRESH<<8 | ADRESL;
+[e =+ _AD_Value -> | << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+"254
+[; ;Li_ion_main.c: 254:             _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"255
+[; ;Li_ion_main.c: 255:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 16 `i 174  ]
+[e :U 175 ]
+}
+"256
+[; ;Li_ion_main.c: 256:         Current_Value+=(AD_Value>>4);
+[e =+ _Current_Value >> _AD_Value -> 4 `i ]
+"257
+[; ;Li_ion_main.c: 257:         C_Count++;
+[e ++ _C_Count -> -> 1 `i `uc ]
+"258
+[; ;Li_ion_main.c: 258:         if(C_Count>=4)
+[e $ ! >= -> _C_Count `i -> 4 `i 180  ]
+"259
+[; ;Li_ion_main.c: 259:         {
+{
+"260
+[; ;Li_ion_main.c: 260:             C_Count=0;
+[e = _C_Count -> -> 0 `i `uc ]
+"261
+[; ;Li_ion_main.c: 261:             Current_Value=Current_Value>>2;
+[e = _Current_Value >> _Current_Value -> 2 `i ]
+"273
+[; ;Li_ion_main.c: 273:             unsigned long A_To_V = ((unsigned long)Current_Value * 500) / 1023;
+[v _A_To_V `ul ~T0 @X0 1 a ]
+[e = _A_To_V / * -> _Current_Value `ul -> -> -> 500 `i `l `ul -> -> -> 1023 `i `l `ul ]
+"274
+[; ;Li_ion_main.c: 274:             Display_Current = (A_To_V * 10) / 24;
+[e = _Display_Current -> / * _A_To_V -> -> -> 10 `i `l `ul -> -> -> 24 `i `l `ul `ui ]
+"275
+[; ;Li_ion_main.c: 275:             Current_Value = 0;
+[e = _Current_Value -> -> 0 `i `ui ]
+"276
+[; ;Li_ion_main.c: 276:             if(Display_Current<20 && PWM_Value<900)
+[e $ ! && < _Display_Current -> -> 20 `i `ui < _PWM_Value -> -> 900 `i `ui 181  ]
+"277
+[; ;Li_ion_main.c: 277:             {
+{
+"278
+[; ;Li_ion_main.c: 278:                 PWM_Value++;
+[e ++ _PWM_Value -> -> 1 `i `ui ]
+"279
+[; ;Li_ion_main.c: 279:                 CCPR1L = PWM_Value>>2;
+[e = _CCPR1L -> >> _PWM_Value -> 2 `i `uc ]
+"280
+[; ;Li_ion_main.c: 280:                 CCP1CON= (PWM_Value &0x3)<<4 |
+[e = _CCP1CON -> | << & _PWM_Value -> -> 3 `i `ui -> 4 `i -> -> 12 `i `ui `uc ]
+"282
+[; ;Li_ion_main.c: 282:             }
+}
+[e $U 182  ]
+"283
+[; ;Li_ion_main.c: 283:             else if(Display_Current>20 && PWM_Value>5)
+[e :U 181 ]
+[e $ ! && > _Display_Current -> -> 20 `i `ui > _PWM_Value -> -> 5 `i `ui 183  ]
+"284
+[; ;Li_ion_main.c: 284:             {
+{
+"285
+[; ;Li_ion_main.c: 285:                 PWM_Value--;
+[e -- _PWM_Value -> -> 1 `i `ui ]
+"286
+[; ;Li_ion_main.c: 286:                 CCPR1L = PWM_Value>>2;
+[e = _CCPR1L -> >> _PWM_Value -> 2 `i `uc ]
+"287
+[; ;Li_ion_main.c: 287:                 CCP1CON= (PWM_Value &0x3)<<4 |
+[e = _CCP1CON -> | << & _PWM_Value -> -> 3 `i `ui -> 4 `i -> -> 12 `i `ui `uc ]
+"289
+[; ;Li_ion_main.c: 289:             }
+}
+[e $U 184  ]
+"290
+[; ;Li_ion_main.c: 290:             else
+[e :U 183 ]
+"291
+[; ;Li_ion_main.c: 291:             {
+{
+"293
+[; ;Li_ion_main.c: 293:             }
+}
+[e :U 184 ]
+[e :U 182 ]
+"294
+[; ;Li_ion_main.c: 294:         }
+}
+[e :U 180 ]
+"296
+[; ;Li_ion_main.c: 296:         ADCON0 &= ~(0x0F<<2);
+[e =& _ADCON0 -> ~ << -> 15 `i -> 2 `i `Vuc ]
+"297
+[; ;Li_ion_main.c: 297:         ADCON0 |= (1<<2);
+[e =| _ADCON0 -> << -> 1 `i -> 2 `i `Vuc ]
+"298
+[; ;Li_ion_main.c: 298:         AD_Value=0;
+[e = _AD_Value -> -> 0 `i `ui ]
+"299
+[; ;Li_ion_main.c: 299:         for(char i=0;i<16;i++)
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 16 `i 185  ]
+[e $U 186  ]
+[e :U 185 ]
+"300
+[; ;Li_ion_main.c: 300:         {
+{
+"301
+[; ;Li_ion_main.c: 301:             ADCON0 |= (1<<1);
+[e =| _ADCON0 -> << -> 1 `i -> 1 `i `Vuc ]
+"302
+[; ;Li_ion_main.c: 302:             while(ADCON0 & (1<<1))
+[e $U 188  ]
+[e :U 189 ]
+"303
+[; ;Li_ion_main.c: 303:                 ;
+[e :U 188 ]
+"302
+[; ;Li_ion_main.c: 302:             while(ADCON0 & (1<<1))
+[e $ != & -> _ADCON0 `i << -> 1 `i -> 1 `i -> 0 `i 189  ]
+[e :U 190 ]
+"304
+[; ;Li_ion_main.c: 304:             AD_Value+=(int)ADRESH<<8 | ADRESL;
+[e =+ _AD_Value -> | << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+"305
+[; ;Li_ion_main.c: 305:             _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"306
+[; ;Li_ion_main.c: 306:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 16 `i 185  ]
+[e :U 186 ]
+}
+"307
+[; ;Li_ion_main.c: 307:         Volt_Value+=(AD_Value>>4);
+[e =+ _Volt_Value >> _AD_Value -> 4 `i ]
+"308
+[; ;Li_ion_main.c: 308:         Total_Count++;
+[e ++ _Total_Count -> -> 1 `i `uc ]
+"309
+[; ;Li_ion_main.c: 309:         if(Total_Count>=4)
+[e $ ! >= -> _Total_Count `i -> 4 `i 191  ]
+"310
+[; ;Li_ion_main.c: 310:         {
+{
+"311
+[; ;Li_ion_main.c: 311:             Total_Count=0;
+[e = _Total_Count -> -> 0 `i `uc ]
+"312
+[; ;Li_ion_main.c: 312:             Volt_Value=Volt_Value>>2;
+[e = _Volt_Value >> _Volt_Value -> 2 `i ]
+"313
+[; ;Li_ion_main.c: 313:             Display_Volt=((long)140*Volt_Value)/512;
+[e = _Display_Volt -> / * -> -> 140 `i `l -> _Volt_Value `l -> -> 512 `i `l `ui ]
+"314
+[; ;Li_ion_main.c: 314:             if(Display_Volt>=126)
+[e $ ! >= _Display_Volt -> -> 126 `i `ui 192  ]
+"315
+[; ;Li_ion_main.c: 315:             {
+{
+"316
+[; ;Li_ion_main.c: 316:                 State=Volt_Charge;
+[e = _State -> . `E1236 2 `uc ]
+"317
+[; ;Li_ion_main.c: 317:             }
+}
+[e :U 192 ]
+"319
+[; ;Li_ion_main.c: 319:             Volt_Value=0;
+[e = _Volt_Value -> -> 0 `i `ui ]
+"320
+[; ;Li_ion_main.c: 320:         }
+}
+[e :U 191 ]
+"321
+[; ;Li_ion_main.c: 321:         if(Display_Volt >=120)
+[e $ ! >= _Display_Volt -> -> 120 `i `ui 193  ]
+"322
+[; ;Li_ion_main.c: 322:         {
+{
+"323
+[; ;Li_ion_main.c: 323:             Display_Array[3] = 21;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 21 `i `uc ]
+"324
+[; ;Li_ion_main.c: 324:         }
+}
+[e $U 194  ]
+"325
+[; ;Li_ion_main.c: 325:         else if(Display_Volt >= 114)
+[e :U 193 ]
+[e $ ! >= _Display_Volt -> -> 114 `i `ui 195  ]
+"326
+[; ;Li_ion_main.c: 326:         {
+{
+"327
+[; ;Li_ion_main.c: 327:             Display_Array[3] = 20;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 20 `i `uc ]
+"328
+[; ;Li_ion_main.c: 328:         }
+}
+[e $U 196  ]
+"329
+[; ;Li_ion_main.c: 329:         else if(Display_Volt >= 108)
+[e :U 195 ]
+[e $ ! >= _Display_Volt -> -> 108 `i `ui 197  ]
+"330
+[; ;Li_ion_main.c: 330:         {
+{
+"331
+[; ;Li_ion_main.c: 331:             Display_Array[3] = 19;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 19 `i `uc ]
+"332
+[; ;Li_ion_main.c: 332:         }
+}
+[e $U 198  ]
+"333
+[; ;Li_ion_main.c: 333:         else if(Display_Volt >= 102)
+[e :U 197 ]
+[e $ ! >= _Display_Volt -> -> 102 `i `ui 199  ]
+"334
+[; ;Li_ion_main.c: 334:         {
+{
+"335
+[; ;Li_ion_main.c: 335:             Display_Array[3] = 18;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 18 `i `uc ]
+"336
+[; ;Li_ion_main.c: 336:         }
+}
+[e $U 200  ]
+"337
+[; ;Li_ion_main.c: 337:         else
+[e :U 199 ]
+"338
+[; ;Li_ion_main.c: 338:         {
+{
+"339
+[; ;Li_ion_main.c: 339:             Display_Array[3] = 23;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 23 `i `uc ]
+"340
+[; ;Li_ion_main.c: 340:         }
+}
+[e :U 200 ]
+[e :U 198 ]
+[e :U 196 ]
+[e :U 194 ]
+"341
+[; ;Li_ion_main.c: 341:         if(Display_Change==0)
+[e $ ! == -> _Display_Change `i -> 0 `i 201  ]
+"342
+[; ;Li_ion_main.c: 342:         {
+{
+"343
+[; ;Li_ion_main.c: 343:             Data2Array(Display_Array,Display_Current);
+[e ( _Data2Array (2 , &U _Display_Array _Display_Current ]
+"344
+[; ;Li_ion_main.c: 344:         }
+}
+[e $U 202  ]
+"345
+[; ;Li_ion_main.c: 345:         else if(Display_Change==1)
+[e :U 201 ]
+[e $ ! == -> _Display_Change `i -> 1 `i 203  ]
+"346
+[; ;Li_ion_main.c: 346:         {
+{
+"347
+[; ;Li_ion_main.c: 347:             Data2Array(Display_Array,Display_Volt);
+[e ( _Data2Array (2 , &U _Display_Array _Display_Volt ]
+"348
+[; ;Li_ion_main.c: 348:         }
+}
+[e :U 203 ]
+[e :U 202 ]
+"349
+[; ;Li_ion_main.c: 349:     }
+}
+[e :U 169 ]
+"234
+[; ;Li_ion_main.c: 234:     while(State==Current_Charge)
+[e $ == -> _State `i -> . `E1236 1 `i 170  ]
+[e :U 171 ]
+"350
+[; ;Li_ion_main.c: 350: }
+[e :UE 168 ]
+}
+"352
+[; ;Li_ion_main.c: 352: void VoltCharge_Function(void)
+[v _VoltCharge_Function `(v ~T0 @X0 1 ef ]
+"353
+[; ;Li_ion_main.c: 353: {
+{
+[e :U _VoltCharge_Function ]
+[f ]
+"354
+[; ;Li_ion_main.c: 354:     unsigned int Volt_Value=0;
+[v _Volt_Value `ui ~T0 @X0 1 a ]
+[e = _Volt_Value -> -> 0 `i `ui ]
+"355
+[; ;Li_ion_main.c: 355:     unsigned int Current_Value=0;
+[v _Current_Value `ui ~T0 @X0 1 a ]
+[e = _Current_Value -> -> 0 `i `ui ]
+"356
+[; ;Li_ion_main.c: 356:     char Total_Count=0;
+[v _Total_Count `uc ~T0 @X0 1 a ]
+[e = _Total_Count -> -> 0 `i `uc ]
+"357
+[; ;Li_ion_main.c: 357:     char C_Count=0;
+[v _C_Count `uc ~T0 @X0 1 a ]
+[e = _C_Count -> -> 0 `i `uc ]
+"359
+[; ;Li_ion_main.c: 359:     CCPR1L = PWM_Value>>2;
+[e = _CCPR1L -> >> _PWM_Value -> 2 `i `uc ]
+"360
+[; ;Li_ion_main.c: 360:     CCP1CON= (PWM_Value &0x3)<<4 |
+[e = _CCP1CON -> | << & _PWM_Value -> -> 3 `i `ui -> 4 `i -> -> 12 `i `ui `uc ]
+"362
+[; ;Li_ion_main.c: 362:     while(State==Volt_Charge)
+[e $U 205  ]
+[e :U 206 ]
+"363
+[; ;Li_ion_main.c: 363:     {
+{
+"364
+[; ;Li_ion_main.c: 364:         if(!(PORTC & (1<<0)))
+[e $ ! ! != & -> _PORTC `i << -> 1 `i -> 0 `i -> 0 `i 208  ]
+"365
+[; ;Li_ion_main.c: 365:         {
+{
+"366
+[; ;Li_ion_main.c: 366:             SolarFlag=1;
+[e = _SolarFlag -> -> 1 `i `uc ]
+"367
+[; ;Li_ion_main.c: 367:         }
+}
+[e $U 209  ]
+"368
+[; ;Li_ion_main.c: 368:         else
+[e :U 208 ]
+"369
+[; ;Li_ion_main.c: 369:         {
+{
+"370
+[; ;Li_ion_main.c: 370:             SolarFlag=0;
+[e = _SolarFlag -> -> 0 `i `uc ]
+"371
+[; ;Li_ion_main.c: 371:             State=Wait_Charge;
+[e = _State -> . `E1236 0 `uc ]
+"372
+[; ;Li_ion_main.c: 372:         }
+}
+[e :U 209 ]
+"373
+[; ;Li_ion_main.c: 373:         ADCON0 &= ~(0x0F<<2);
+[e =& _ADCON0 -> ~ << -> 15 `i -> 2 `i `Vuc ]
+"374
+[; ;Li_ion_main.c: 374:         ADCON0 |= (0<<2);
+[e =| _ADCON0 -> << -> 0 `i -> 2 `i `Vuc ]
+"375
+[; ;Li_ion_main.c: 375:         AD_Value=0;
+[e = _AD_Value -> -> 0 `i `ui ]
+"376
+[; ;Li_ion_main.c: 376:         for(char i=0;i<16;i++)
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 16 `i 210  ]
+[e $U 211  ]
+[e :U 210 ]
+"377
+[; ;Li_ion_main.c: 377:         {
+{
+"378
+[; ;Li_ion_main.c: 378:             ADCON0 |= (1<<1);
+[e =| _ADCON0 -> << -> 1 `i -> 1 `i `Vuc ]
+"379
+[; ;Li_ion_main.c: 379:             while(ADCON0 & (1<<1))
+[e $U 213  ]
+[e :U 214 ]
+"380
+[; ;Li_ion_main.c: 380:                 ;
+[e :U 213 ]
+"379
+[; ;Li_ion_main.c: 379:             while(ADCON0 & (1<<1))
+[e $ != & -> _ADCON0 `i << -> 1 `i -> 1 `i -> 0 `i 214  ]
+[e :U 215 ]
+"381
+[; ;Li_ion_main.c: 381:             AD_Value+=(int)ADRESH<<8 | ADRESL;
+[e =+ _AD_Value -> | << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+"382
+[; ;Li_ion_main.c: 382:             _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"383
+[; ;Li_ion_main.c: 383:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 16 `i 210  ]
+[e :U 211 ]
+}
+"384
+[; ;Li_ion_main.c: 384:         Current_Value+=(AD_Value>>4);
+[e =+ _Current_Value >> _AD_Value -> 4 `i ]
+"385
+[; ;Li_ion_main.c: 385:         C_Count++;
+[e ++ _C_Count -> -> 1 `i `uc ]
+"386
+[; ;Li_ion_main.c: 386:         if(C_Count>=4)
+[e $ ! >= -> _C_Count `i -> 4 `i 216  ]
+"387
+[; ;Li_ion_main.c: 387:         {
+{
+"388
+[; ;Li_ion_main.c: 388:             C_Count=0;
+[e = _C_Count -> -> 0 `i `uc ]
+"389
+[; ;Li_ion_main.c: 389:             Current_Value=Current_Value>>2;
+[e = _Current_Value >> _Current_Value -> 2 `i ]
+"401
+[; ;Li_ion_main.c: 401:             unsigned long A_To_V = ((unsigned long)Current_Value * 500) / 1023;
+[v _A_To_V `ul ~T0 @X0 1 a ]
+[e = _A_To_V / * -> _Current_Value `ul -> -> -> 500 `i `l `ul -> -> -> 1023 `i `l `ul ]
+"402
+[; ;Li_ion_main.c: 402:             Display_Current = (A_To_V * 10) / 24;
+[e = _Display_Current -> / * _A_To_V -> -> -> 10 `i `l `ul -> -> -> 24 `i `l `ul `ui ]
+"403
+[; ;Li_ion_main.c: 403:             Current_Value = 0;
+[e = _Current_Value -> -> 0 `i `ui ]
+"404
+[; ;Li_ion_main.c: 404:             if(Display_Current<=2)
+[e $ ! <= _Display_Current -> -> 2 `i `ui 217  ]
+"405
+[; ;Li_ion_main.c: 405:             {
+{
+"406
+[; ;Li_ion_main.c: 406:                 State=Full_Charge;
+[e = _State -> . `E1236 3 `uc ]
+"407
+[; ;Li_ion_main.c: 407:             }
+}
+[e :U 217 ]
+"408
+[; ;Li_ion_main.c: 408:         }
+}
+[e :U 216 ]
+"410
+[; ;Li_ion_main.c: 410:         ADCON0 &= ~(0x0F<<2);
+[e =& _ADCON0 -> ~ << -> 15 `i -> 2 `i `Vuc ]
+"411
+[; ;Li_ion_main.c: 411:         ADCON0 |= (1<<2);
+[e =| _ADCON0 -> << -> 1 `i -> 2 `i `Vuc ]
+"412
+[; ;Li_ion_main.c: 412:         AD_Value=0;
+[e = _AD_Value -> -> 0 `i `ui ]
+"413
+[; ;Li_ion_main.c: 413:         for(char i=0;i<16;i++)
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 16 `i 218  ]
+[e $U 219  ]
+[e :U 218 ]
+"414
+[; ;Li_ion_main.c: 414:         {
+{
+"415
+[; ;Li_ion_main.c: 415:             ADCON0 |= (1<<1);
+[e =| _ADCON0 -> << -> 1 `i -> 1 `i `Vuc ]
+"416
+[; ;Li_ion_main.c: 416:             while(ADCON0 & (1<<1))
+[e $U 221  ]
+[e :U 222 ]
+"417
+[; ;Li_ion_main.c: 417:                 ;
+[e :U 221 ]
+"416
+[; ;Li_ion_main.c: 416:             while(ADCON0 & (1<<1))
+[e $ != & -> _ADCON0 `i << -> 1 `i -> 1 `i -> 0 `i 222  ]
+[e :U 223 ]
+"418
+[; ;Li_ion_main.c: 418:             AD_Value+=(int)ADRESH<<8 | ADRESL;
+[e =+ _AD_Value -> | << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+"419
+[; ;Li_ion_main.c: 419:             _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"420
+[; ;Li_ion_main.c: 420:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 16 `i 218  ]
+[e :U 219 ]
+}
+"421
+[; ;Li_ion_main.c: 421:         Volt_Value+=(AD_Value>>4);
+[e =+ _Volt_Value >> _AD_Value -> 4 `i ]
+"422
+[; ;Li_ion_main.c: 422:         Total_Count++;
+[e ++ _Total_Count -> -> 1 `i `uc ]
+"423
+[; ;Li_ion_main.c: 423:         if(Total_Count>=4)
+[e $ ! >= -> _Total_Count `i -> 4 `i 224  ]
+"424
+[; ;Li_ion_main.c: 424:         {
+{
+"425
+[; ;Li_ion_main.c: 425:             Total_Count=0;
+[e = _Total_Count -> -> 0 `i `uc ]
+"426
+[; ;Li_ion_main.c: 426:             Volt_Value=Volt_Value>>2;
+[e = _Volt_Value >> _Volt_Value -> 2 `i ]
+"427
+[; ;Li_ion_main.c: 427:             Display_Volt=((long)140*Volt_Value)/512;
+[e = _Display_Volt -> / * -> -> 140 `i `l -> _Volt_Value `l -> -> 512 `i `l `ui ]
+"428
+[; ;Li_ion_main.c: 428:             if(Display_Volt<126 && PWM_Value<900 && Display_Current < 20)
+[e $ ! && && < _Display_Volt -> -> 126 `i `ui < _PWM_Value -> -> 900 `i `ui < _Display_Current -> -> 20 `i `ui 225  ]
+"429
+[; ;Li_ion_main.c: 429:             {
+{
+"430
+[; ;Li_ion_main.c: 430:                 PWM_Value++;
+[e ++ _PWM_Value -> -> 1 `i `ui ]
+"431
+[; ;Li_ion_main.c: 431:                 CCPR1L = PWM_Value>>2;
+[e = _CCPR1L -> >> _PWM_Value -> 2 `i `uc ]
+"432
+[; ;Li_ion_main.c: 432:                 CCP1CON= (PWM_Value &0x3)<<4 |
+[e = _CCP1CON -> | << & _PWM_Value -> -> 3 `i `ui -> 4 `i -> -> 12 `i `ui `uc ]
+"434
+[; ;Li_ion_main.c: 434:             }
+}
+[e $U 226  ]
+"435
+[; ;Li_ion_main.c: 435:             else if(Display_Volt>126 && PWM_Value>5)
+[e :U 225 ]
+[e $ ! && > _Display_Volt -> -> 126 `i `ui > _PWM_Value -> -> 5 `i `ui 227  ]
+"436
+[; ;Li_ion_main.c: 436:             {
+{
+"437
+[; ;Li_ion_main.c: 437:                 PWM_Value--;
+[e -- _PWM_Value -> -> 1 `i `ui ]
+"438
+[; ;Li_ion_main.c: 438:                 CCPR1L = PWM_Value>>2;
+[e = _CCPR1L -> >> _PWM_Value -> 2 `i `uc ]
+"439
+[; ;Li_ion_main.c: 439:                 CCP1CON= (PWM_Value &0x3)<<4 |
+[e = _CCP1CON -> | << & _PWM_Value -> -> 3 `i `ui -> 4 `i -> -> 12 `i `ui `uc ]
+"441
+[; ;Li_ion_main.c: 441:             }
+}
+[e $U 228  ]
+"442
+[; ;Li_ion_main.c: 442:             else
+[e :U 227 ]
+"443
+[; ;Li_ion_main.c: 443:             {
+{
+"445
+[; ;Li_ion_main.c: 445:             }
+}
+[e :U 228 ]
+[e :U 226 ]
+"446
+[; ;Li_ion_main.c: 446:             if(Display_Current>20 && PWM_Value>5)
+[e $ ! && > _Display_Current -> -> 20 `i `ui > _PWM_Value -> -> 5 `i `ui 229  ]
+"447
+[; ;Li_ion_main.c: 447:             {
+{
+"448
+[; ;Li_ion_main.c: 448:                 PWM_Value--;
+[e -- _PWM_Value -> -> 1 `i `ui ]
+"449
+[; ;Li_ion_main.c: 449:                 CCPR1L = PWM_Value>>2;
+[e = _CCPR1L -> >> _PWM_Value -> 2 `i `uc ]
+"450
+[; ;Li_ion_main.c: 450:                 CCP1CON= (PWM_Value &0x3)<<4 |
+[e = _CCP1CON -> | << & _PWM_Value -> -> 3 `i `ui -> 4 `i -> -> 12 `i `ui `uc ]
+"452
+[; ;Li_ion_main.c: 452:             }
+}
+[e :U 229 ]
+"454
+[; ;Li_ion_main.c: 454:             Volt_Value=0;
+[e = _Volt_Value -> -> 0 `i `ui ]
+"455
+[; ;Li_ion_main.c: 455:         }
+}
+[e :U 224 ]
+"456
+[; ;Li_ion_main.c: 456:         if(Display_Volt >=120)
+[e $ ! >= _Display_Volt -> -> 120 `i `ui 230  ]
+"457
+[; ;Li_ion_main.c: 457:         {
+{
+"458
+[; ;Li_ion_main.c: 458:             Display_Array[3] = 21;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 21 `i `uc ]
+"459
+[; ;Li_ion_main.c: 459:         }
+}
+[e $U 231  ]
+"460
+[; ;Li_ion_main.c: 460:         else if(Display_Volt >= 114)
+[e :U 230 ]
+[e $ ! >= _Display_Volt -> -> 114 `i `ui 232  ]
+"461
+[; ;Li_ion_main.c: 461:         {
+{
+"462
+[; ;Li_ion_main.c: 462:             Display_Array[3] = 20;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 20 `i `uc ]
+"463
+[; ;Li_ion_main.c: 463:         }
+}
+[e $U 233  ]
+"464
+[; ;Li_ion_main.c: 464:         else if(Display_Volt >= 108)
+[e :U 232 ]
+[e $ ! >= _Display_Volt -> -> 108 `i `ui 234  ]
+"465
+[; ;Li_ion_main.c: 465:         {
+{
+"466
+[; ;Li_ion_main.c: 466:             Display_Array[3] = 19;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 19 `i `uc ]
+"467
+[; ;Li_ion_main.c: 467:         }
+}
+[e $U 235  ]
+"468
+[; ;Li_ion_main.c: 468:         else if(Display_Volt >= 102)
+[e :U 234 ]
+[e $ ! >= _Display_Volt -> -> 102 `i `ui 236  ]
+"469
+[; ;Li_ion_main.c: 469:         {
+{
+"470
+[; ;Li_ion_main.c: 470:             Display_Array[3] = 18;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 18 `i `uc ]
+"471
+[; ;Li_ion_main.c: 471:         }
+}
+[e $U 237  ]
+"472
+[; ;Li_ion_main.c: 472:         else
+[e :U 236 ]
+"473
+[; ;Li_ion_main.c: 473:         {
+{
+"474
+[; ;Li_ion_main.c: 474:             Display_Array[3] = 23;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 23 `i `uc ]
+"475
+[; ;Li_ion_main.c: 475:         }
+}
+[e :U 237 ]
+[e :U 235 ]
+[e :U 233 ]
+[e :U 231 ]
+"476
+[; ;Li_ion_main.c: 476:         if(Display_Change==0)
+[e $ ! == -> _Display_Change `i -> 0 `i 238  ]
+"477
+[; ;Li_ion_main.c: 477:         {
+{
+"478
+[; ;Li_ion_main.c: 478:             Data2Array(Display_Array,Display_Current);
+[e ( _Data2Array (2 , &U _Display_Array _Display_Current ]
+"479
+[; ;Li_ion_main.c: 479:         }
+}
+[e $U 239  ]
+"480
+[; ;Li_ion_main.c: 480:         else if(Display_Change==1)
+[e :U 238 ]
+[e $ ! == -> _Display_Change `i -> 1 `i 240  ]
+"481
+[; ;Li_ion_main.c: 481:         {
+{
+"482
+[; ;Li_ion_main.c: 482:             Data2Array(Display_Array,Display_Volt);
+[e ( _Data2Array (2 , &U _Display_Array _Display_Volt ]
+"483
+[; ;Li_ion_main.c: 483:         }
+}
+[e :U 240 ]
+[e :U 239 ]
+"484
+[; ;Li_ion_main.c: 484:     }
+}
+[e :U 205 ]
+"362
+[; ;Li_ion_main.c: 362:     while(State==Volt_Charge)
+[e $ == -> _State `i -> . `E1236 2 `i 206  ]
+[e :U 207 ]
+"485
+[; ;Li_ion_main.c: 485: }
+[e :UE 204 ]
+}
+"487
+[; ;Li_ion_main.c: 487: void FullCharge_Function(void)
+[v _FullCharge_Function `(v ~T0 @X0 1 ef ]
+"488
+[; ;Li_ion_main.c: 488: {
+{
+[e :U _FullCharge_Function ]
+[f ]
+"489
+[; ;Li_ion_main.c: 489:     unsigned int Volt_Value=0;
+[v _Volt_Value `ui ~T0 @X0 1 a ]
+[e = _Volt_Value -> -> 0 `i `ui ]
+"490
+[; ;Li_ion_main.c: 490:     char Total_Count=0;
+[v _Total_Count `uc ~T0 @X0 1 a ]
+[e = _Total_Count -> -> 0 `i `uc ]
+"491
+[; ;Li_ion_main.c: 491:     Volt_Value=0;
+[e = _Volt_Value -> -> 0 `i `ui ]
+"492
+[; ;Li_ion_main.c: 492:     PWM_Value=0;
+[e = _PWM_Value -> -> 0 `i `ui ]
+"493
+[; ;Li_ion_main.c: 493:     CCPR1L = PWM_Value>>2;
+[e = _CCPR1L -> >> _PWM_Value -> 2 `i `uc ]
+"494
+[; ;Li_ion_main.c: 494:     CCP1CON= (PWM_Value &0x3)<<4 |
+[e = _CCP1CON -> | << & _PWM_Value -> -> 3 `i `ui -> 4 `i -> -> 12 `i `ui `uc ]
+"496
+[; ;Li_ion_main.c: 496:     while(State==Full_Charge)
+[e $U 242  ]
+[e :U 243 ]
+"497
+[; ;Li_ion_main.c: 497:     {
+{
+"498
+[; ;Li_ion_main.c: 498:         if(!(PORTC & (1<<0)))
+[e $ ! ! != & -> _PORTC `i << -> 1 `i -> 0 `i -> 0 `i 245  ]
+"499
+[; ;Li_ion_main.c: 499:         {
+{
+"500
+[; ;Li_ion_main.c: 500:             SolarFlag=1;
+[e = _SolarFlag -> -> 1 `i `uc ]
+"502
+[; ;Li_ion_main.c: 502:         }
+}
+[e $U 246  ]
+"503
+[; ;Li_ion_main.c: 503:         else
+[e :U 245 ]
+"504
+[; ;Li_ion_main.c: 504:         {
+{
+"505
+[; ;Li_ion_main.c: 505:             SolarFlag=0;
+[e = _SolarFlag -> -> 0 `i `uc ]
+"507
+[; ;Li_ion_main.c: 507:         }
+}
+[e :U 246 ]
+"508
+[; ;Li_ion_main.c: 508:         ADCON0 &= ~(0x0F<<2);
+[e =& _ADCON0 -> ~ << -> 15 `i -> 2 `i `Vuc ]
+"509
+[; ;Li_ion_main.c: 509:         ADCON0 |= (1<<2);
+[e =| _ADCON0 -> << -> 1 `i -> 2 `i `Vuc ]
+"510
+[; ;Li_ion_main.c: 510:         AD_Value=0;
+[e = _AD_Value -> -> 0 `i `ui ]
+"511
+[; ;Li_ion_main.c: 511:         for(char i=0;i<16;i++)
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 16 `i 247  ]
+[e $U 248  ]
+[e :U 247 ]
+"512
+[; ;Li_ion_main.c: 512:         {
+{
+"513
+[; ;Li_ion_main.c: 513:             ADCON0 |= (1<<1);
+[e =| _ADCON0 -> << -> 1 `i -> 1 `i `Vuc ]
+"514
+[; ;Li_ion_main.c: 514:             while(ADCON0 & (1<<1))
+[e $U 250  ]
+[e :U 251 ]
+"515
+[; ;Li_ion_main.c: 515:                 ;
+[e :U 250 ]
+"514
+[; ;Li_ion_main.c: 514:             while(ADCON0 & (1<<1))
+[e $ != & -> _ADCON0 `i << -> 1 `i -> 1 `i -> 0 `i 251  ]
+[e :U 252 ]
+"516
+[; ;Li_ion_main.c: 516:             AD_Value+=(int)ADRESH<<8 | ADRESL;
+[e =+ _AD_Value -> | << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+"517
+[; ;Li_ion_main.c: 517:             _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"518
+[; ;Li_ion_main.c: 518:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 16 `i 247  ]
+[e :U 248 ]
+}
+"519
+[; ;Li_ion_main.c: 519:         Volt_Value+=(AD_Value>>4);
+[e =+ _Volt_Value >> _AD_Value -> 4 `i ]
+"520
+[; ;Li_ion_main.c: 520:         Total_Count++;
+[e ++ _Total_Count -> -> 1 `i `uc ]
+"521
+[; ;Li_ion_main.c: 521:         if(Total_Count>=4)
+[e $ ! >= -> _Total_Count `i -> 4 `i 253  ]
+"522
+[; ;Li_ion_main.c: 522:         {
+{
+"523
+[; ;Li_ion_main.c: 523:             Total_Count=0;
+[e = _Total_Count -> -> 0 `i `uc ]
+"524
+[; ;Li_ion_main.c: 524:             Volt_Value=Volt_Value>>2;
+[e = _Volt_Value >> _Volt_Value -> 2 `i ]
+"525
+[; ;Li_ion_main.c: 525:             Display_Volt=((long)140*Volt_Value)/512;
+[e = _Display_Volt -> / * -> -> 140 `i `l -> _Volt_Value `l -> -> 512 `i `l `ui ]
+"526
+[; ;Li_ion_main.c: 526:             Data2Array(Display_Array,Display_Volt);
+[e ( _Data2Array (2 , &U _Display_Array _Display_Volt ]
+"527
+[; ;Li_ion_main.c: 527:             Volt_Value=0;
+[e = _Volt_Value -> -> 0 `i `ui ]
+"528
+[; ;Li_ion_main.c: 528:         }
+}
+[e :U 253 ]
+"529
+[; ;Li_ion_main.c: 529:         if(Display_Volt < 126 && SolarFlag == 1)
+[e $ ! && < _Display_Volt -> -> 126 `i `ui == -> _SolarFlag `i -> 1 `i 254  ]
+"530
+[; ;Li_ion_main.c: 530:         {
+{
+"531
+[; ;Li_ion_main.c: 531:             State = Current_Charge;
+[e = _State -> . `E1236 1 `uc ]
+"532
+[; ;Li_ion_main.c: 532:         }
+}
+[e :U 254 ]
+"533
+[; ;Li_ion_main.c: 533:         if(Display_Volt >=120)
+[e $ ! >= _Display_Volt -> -> 120 `i `ui 255  ]
+"534
+[; ;Li_ion_main.c: 534:         {
+{
+"535
+[; ;Li_ion_main.c: 535:             Display_Array[3] = 21;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 21 `i `uc ]
+"536
+[; ;Li_ion_main.c: 536:         }
+}
+[e $U 256  ]
+"537
+[; ;Li_ion_main.c: 537:         else if(Display_Volt >= 114)
+[e :U 255 ]
+[e $ ! >= _Display_Volt -> -> 114 `i `ui 257  ]
+"538
+[; ;Li_ion_main.c: 538:         {
+{
+"539
+[; ;Li_ion_main.c: 539:             Display_Array[3] = 20;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 20 `i `uc ]
+"540
+[; ;Li_ion_main.c: 540:         }
+}
+[e $U 258  ]
+"541
+[; ;Li_ion_main.c: 541:         else if(Display_Volt >= 108)
+[e :U 257 ]
+[e $ ! >= _Display_Volt -> -> 108 `i `ui 259  ]
+"542
+[; ;Li_ion_main.c: 542:         {
+{
+"543
+[; ;Li_ion_main.c: 543:             Display_Array[3] = 19;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 19 `i `uc ]
+"544
+[; ;Li_ion_main.c: 544:         }
+}
+[e $U 260  ]
+"545
+[; ;Li_ion_main.c: 545:         else if(Display_Volt >= 102)
+[e :U 259 ]
+[e $ ! >= _Display_Volt -> -> 102 `i `ui 261  ]
+"546
+[; ;Li_ion_main.c: 546:         {
+{
+"547
+[; ;Li_ion_main.c: 547:             Display_Array[3] = 18;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 18 `i `uc ]
+"548
+[; ;Li_ion_main.c: 548:         }
+}
+[e $U 262  ]
+"549
+[; ;Li_ion_main.c: 549:         else
+[e :U 261 ]
+"550
+[; ;Li_ion_main.c: 550:         {
+{
+"551
+[; ;Li_ion_main.c: 551:             Display_Array[3] = 23;
+[e = *U + &U _Display_Array * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display_Array `ui `ux -> -> 23 `i `uc ]
+"552
+[; ;Li_ion_main.c: 552:         }
+}
+[e :U 262 ]
+[e :U 260 ]
+[e :U 258 ]
+[e :U 256 ]
+"554
+[; ;Li_ion_main.c: 554:     }
+}
+[e :U 242 ]
+"496
+[; ;Li_ion_main.c: 496:     while(State==Full_Charge)
+[e $ == -> _State `i -> . `E1236 3 `i 243  ]
+[e :U 244 ]
+"555
+[; ;Li_ion_main.c: 555: }
+[e :UE 241 ]
+}
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+"557
+[; ;Li_ion_main.c: 557: void __attribute__((picinterrupt(("")))) ISR(void)
+[v _ISR `(v ~T1 @X0 1 ef ]
+"558
+[; ;Li_ion_main.c: 558: {
+{
+[e :U _ISR ]
+[f ]
+"559
+[; ;Li_ion_main.c: 559:     static int Display_Count=0;
+[v F1286 `i ~T0 @X0 1 s Display_Count ]
+[i F1286
+-> 0 `i
+]
+"560
+[; ;Li_ion_main.c: 560:     if(INTCON & (1<<2))
+[e $ ! != & -> _INTCON `i << -> 1 `i -> 2 `i -> 0 `i 264  ]
+"561
+[; ;Li_ion_main.c: 561:     {
+{
+"562
+[; ;Li_ion_main.c: 562:         INTCON &= ~(1<<2);
+[e =& _INTCON -> ~ << -> 1 `i -> 2 `i `Vuc ]
+"563
+[; ;Li_ion_main.c: 563:         Display_Segment(Display_Array);
+[e ( _Display_Segment (1 &U _Display_Array ]
+"564
+[; ;Li_ion_main.c: 564:         Display_Count++;
+[e ++ F1286 -> 1 `i ]
+"565
+[; ;Li_ion_main.c: 565:         if(Display_Count>=1000)
+[e $ ! >= F1286 -> 1000 `i 265  ]
+"566
+[; ;Li_ion_main.c: 566:         {
+{
+"567
+[; ;Li_ion_main.c: 567:             Display_Count=0;
+[e = F1286 -> 0 `i ]
+"568
+[; ;Li_ion_main.c: 568:             Display_Change^=1;
+[e =^ _Display_Change -> -> 1 `i `uc ]
+"569
+[; ;Li_ion_main.c: 569:         }
+}
+[e :U 265 ]
+"570
+[; ;Li_ion_main.c: 570:     }
+}
+[e :U 264 ]
+"571
+[; ;Li_ion_main.c: 571: }
+[e :UE 263 ]
+}
+"574
+[; ;Li_ion_main.c: 574: void Display_Segment(char* Display_Array)
+[v _Display_Segment `(v ~T0 @X0 1 ef1`*uc ]
+"575
+[; ;Li_ion_main.c: 575: {
+{
+[e :U _Display_Segment ]
+"574
+[; ;Li_ion_main.c: 574: void Display_Segment(char* Display_Array)
+[v _Display_Array `*uc ~T0 @X0 1 r1 ]
+"575
+[; ;Li_ion_main.c: 575: {
+[f ]
+"576
+[; ;Li_ion_main.c: 576:     static char count=1;
+[v F1289 `uc ~T0 @X0 1 s count ]
+[i F1289
+-> -> 1 `i `uc
+]
+"577
+[; ;Li_ion_main.c: 577:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
+"578
+[; ;Li_ion_main.c: 578:     switch(count)
+[e $U 268  ]
+"579
+[; ;Li_ion_main.c: 579:     {
+{
+"580
+[; ;Li_ion_main.c: 580:         case 1:
+[e :U 269 ]
+"581
+[; ;Li_ion_main.c: 581:     PORTC &= ~(1<<4);
+[e =& _PORTC -> ~ << -> 1 `i -> 4 `i `Vuc ]
+"582
+[; ;Li_ion_main.c: 582:           if(Display_Array[0] != 0)
+[e $ ! != -> *U + _Display_Array * -> -> 0 `i `x -> -> # *U _Display_Array `i `x `i -> 0 `i 270  ]
+"583
+[; ;Li_ion_main.c: 583:           {
+{
+"584
+[; ;Li_ion_main.c: 584:      PORTB = Segment_Tab[Display_Array[0]];
+[e = _PORTB -> *U + &U _Segment_Tab * -> *U + _Display_Array * -> -> 0 `i `x -> -> # *U _Display_Array `i `x `ux -> -> # *U &U _Segment_Tab `ui `ux `uc ]
+"585
+[; ;Li_ion_main.c: 585:           }
+}
+[e $U 271  ]
+"586
+[; ;Li_ion_main.c: 586:           else
+[e :U 270 ]
+"587
+[; ;Li_ion_main.c: 587:           {
+{
+"588
+[; ;Li_ion_main.c: 588:               PORTB = Segment_Tab[23];
+[e = _PORTB -> *U + &U _Segment_Tab * -> -> -> 23 `i `ui `ux -> -> # *U &U _Segment_Tab `ui `ux `uc ]
+"589
+[; ;Li_ion_main.c: 589:           }
+}
+[e :U 271 ]
+"590
+[; ;Li_ion_main.c: 590:           count=2;
+[e = F1289 -> -> 2 `i `uc ]
+"591
+[; ;Li_ion_main.c: 591:           PORTC |= (1<<7);
+[e =| _PORTC -> << -> 1 `i -> 7 `i `Vuc ]
+"592
+[; ;Li_ion_main.c: 592:           break;
+[e $U 267  ]
+"593
+[; ;Li_ion_main.c: 593:         case 2:
+[e :U 272 ]
+"594
+[; ;Li_ion_main.c: 594:           PORTC &= ~(1<<7);
+[e =& _PORTC -> ~ << -> 1 `i -> 7 `i `Vuc ]
+"595
+[; ;Li_ion_main.c: 595:           PORTB = Segment_Tab[Display_Array[1]];
+[e = _PORTB -> *U + &U _Segment_Tab * -> *U + _Display_Array * -> -> 1 `i `x -> -> # *U _Display_Array `i `x `ux -> -> # *U &U _Segment_Tab `ui `ux `uc ]
+"596
+[; ;Li_ion_main.c: 596:           PORTB |= (1<<2);
+[e =| _PORTB -> << -> 1 `i -> 2 `i `Vuc ]
+"597
+[; ;Li_ion_main.c: 597:           count=3;
+[e = F1289 -> -> 3 `i `uc ]
+"598
+[; ;Li_ion_main.c: 598:           PORTC |= (1<<6);
+[e =| _PORTC -> << -> 1 `i -> 6 `i `Vuc ]
+"599
+[; ;Li_ion_main.c: 599:           break;
+[e $U 267  ]
+"600
+[; ;Li_ion_main.c: 600:         case 3:
+[e :U 273 ]
+"601
+[; ;Li_ion_main.c: 601:           PORTC &= ~(1<<6);
+[e =& _PORTC -> ~ << -> 1 `i -> 6 `i `Vuc ]
+"602
+[; ;Li_ion_main.c: 602:           PORTB = Segment_Tab[Display_Array[2]];
+[e = _PORTB -> *U + &U _Segment_Tab * -> *U + _Display_Array * -> -> 2 `i `x -> -> # *U _Display_Array `i `x `ux -> -> # *U &U _Segment_Tab `ui `ux `uc ]
+"603
+[; ;Li_ion_main.c: 603:           count=4;
+[e = F1289 -> -> 4 `i `uc ]
+"604
+[; ;Li_ion_main.c: 604:           PORTC |= (1<<5);
+[e =| _PORTC -> << -> 1 `i -> 5 `i `Vuc ]
+"605
+[; ;Li_ion_main.c: 605:           break;
+[e $U 267  ]
+"606
+[; ;Li_ion_main.c: 606:      case 4:
+[e :U 274 ]
+"607
+[; ;Li_ion_main.c: 607:           PORTC &= ~(1<<5);
+[e =& _PORTC -> ~ << -> 1 `i -> 5 `i `Vuc ]
+"608
+[; ;Li_ion_main.c: 608:           if(SolarFlag==1)
+[e $ ! == -> _SolarFlag `i -> 1 `i 275  ]
+"609
+[; ;Li_ion_main.c: 609:           {
+{
+"610
+[; ;Li_ion_main.c: 610:               PORTB = Segment_Tab[Display_Array[3]] | (1<<3);
+[e = _PORTB -> | -> *U + &U _Segment_Tab * -> *U + _Display_Array * -> -> 3 `i `x -> -> # *U _Display_Array `i `x `ux -> -> # *U &U _Segment_Tab `ui `ux `i << -> 1 `i -> 3 `i `uc ]
+"611
+[; ;Li_ion_main.c: 611:           }
+}
+[e $U 276  ]
+"612
+[; ;Li_ion_main.c: 612:           else
+[e :U 275 ]
+"613
+[; ;Li_ion_main.c: 613:           {
+{
+"614
+[; ;Li_ion_main.c: 614:               PORTB = Segment_Tab[Display_Array[3]];
+[e = _PORTB -> *U + &U _Segment_Tab * -> *U + _Display_Array * -> -> 3 `i `x -> -> # *U _Display_Array `i `x `ux -> -> # *U &U _Segment_Tab `ui `ux `uc ]
+"615
+[; ;Li_ion_main.c: 615:           }
+}
+[e :U 276 ]
+"616
+[; ;Li_ion_main.c: 616:           count=1;
+[e = F1289 -> -> 1 `i `uc ]
+"617
+[; ;Li_ion_main.c: 617:           PORTC |= (1<<4);
+[e =| _PORTC -> << -> 1 `i -> 4 `i `Vuc ]
+"618
+[; ;Li_ion_main.c: 618:           break;
+[e $U 267  ]
+"619
+[; ;Li_ion_main.c: 619:         default:
+[e :U 277 ]
+"620
+[; ;Li_ion_main.c: 620:           count = 1;
+[e = F1289 -> -> 1 `i `uc ]
+"621
+[; ;Li_ion_main.c: 621:           break;
+[e $U 267  ]
+"622
+[; ;Li_ion_main.c: 622:     }
+}
+[e $U 267  ]
+[e :U 268 ]
+[e [\ -> F1289 `i , $ -> 1 `i 269
+ , $ -> 2 `i 272
+ , $ -> 3 `i 273
+ , $ -> 4 `i 274
+ 277 ]
+[e :U 267 ]
+"623
+[; ;Li_ion_main.c: 623: }
+[e :UE 266 ]
+}
+"627
+[; ;Li_ion_main.c: 627: void Data2Array(char* d_Array,unsigned int data)
+[v _Data2Array `(v ~T0 @X0 1 ef2`*uc`ui ]
+"628
+[; ;Li_ion_main.c: 628: {
+{
+[e :U _Data2Array ]
+"627
+[; ;Li_ion_main.c: 627: void Data2Array(char* d_Array,unsigned int data)
+[v _d_Array `*uc ~T0 @X0 1 r1 ]
+[v _data `ui ~T0 @X0 1 r2 ]
+"628
+[; ;Li_ion_main.c: 628: {
+[f ]
+"629
+[; ;Li_ion_main.c: 629:     d_Array[0]=0;
+[e = *U + _d_Array * -> -> 0 `i `x -> -> # *U _d_Array `i `x -> -> 0 `i `uc ]
+"630
+[; ;Li_ion_main.c: 630:     while(data >= 100)
+[e $U 279  ]
+[e :U 280 ]
+"631
+[; ;Li_ion_main.c: 631:     {
+{
+"632
+[; ;Li_ion_main.c: 632:         data-=100;
+[e =- _data -> -> 100 `i `ui ]
+"633
+[; ;Li_ion_main.c: 633:         d_Array[0]++;
+[e ++ *U + _d_Array * -> -> 0 `i `x -> -> # *U _d_Array `i `x -> -> 1 `i `uc ]
+"634
+[; ;Li_ion_main.c: 634:     }
+}
+[e :U 279 ]
+"630
+[; ;Li_ion_main.c: 630:     while(data >= 100)
+[e $ >= _data -> -> 100 `i `ui 280  ]
+[e :U 281 ]
+"636
+[; ;Li_ion_main.c: 636:     d_Array[1]=0;
+[e = *U + _d_Array * -> -> 1 `i `x -> -> # *U _d_Array `i `x -> -> 0 `i `uc ]
+"637
+[; ;Li_ion_main.c: 637:     while(data >= 10)
+[e $U 282  ]
+[e :U 283 ]
+"638
+[; ;Li_ion_main.c: 638:     {
+{
+"639
+[; ;Li_ion_main.c: 639:         data-=10;
+[e =- _data -> -> 10 `i `ui ]
+"640
+[; ;Li_ion_main.c: 640:         d_Array[1]++;
+[e ++ *U + _d_Array * -> -> 1 `i `x -> -> # *U _d_Array `i `x -> -> 1 `i `uc ]
+"641
+[; ;Li_ion_main.c: 641:     }
+}
+[e :U 282 ]
+"637
+[; ;Li_ion_main.c: 637:     while(data >= 10)
+[e $ >= _data -> -> 10 `i `ui 283  ]
+[e :U 284 ]
+"644
+[; ;Li_ion_main.c: 644:     d_Array[2]=data;
+[e = *U + _d_Array * -> -> 2 `i `x -> -> # *U _d_Array `i `x -> _data `uc ]
+"646
+[; ;Li_ion_main.c: 646: }
+[e :UE 278 ]
+}

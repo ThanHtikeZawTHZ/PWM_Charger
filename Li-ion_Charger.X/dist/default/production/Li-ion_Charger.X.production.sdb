@@ -1,0 +1,288 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F883 ]
+[d frameptr 0 ]
+"90 D:\P I  C\Project\Li-ion Charger\Li-ion_Charger.X\Li_ion_main.c
+[e E1236 State `uc
+Wait_Charge 0
+Current_Charge 1
+Volt_Charge 2
+Full_Charge 3
+]
+"129
+[e E1207 . `uc
+CCPM1 1
+CCPM2 2
+]
+"91 D:\P I  C\Project\Li-ion Charger\Li-ion_Charger.X\PWM.c
+[e E1204 . `uc
+CCPM1 1
+CCPM2 2
+]
+"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"109 D:\P I  C\Project\Li-ion Charger\Li-ion_Charger.X\Li_ion_main.c
+[v _main main `(v  1 e 1 0 ]
+"158
+[v _WaitCharge_Function WaitCharge_Function `(v  1 e 1 0 ]
+"224
+[v _CurrentCharge_Function CurrentCharge_Function `(v  1 e 1 0 ]
+"352
+[v _VoltCharge_Function VoltCharge_Function `(v  1 e 1 0 ]
+"487
+[v _FullCharge_Function FullCharge_Function `(v  1 e 1 0 ]
+"557
+[v _ISR ISR `II(v  1 e 1 0 ]
+"574
+[v _Display_Segment Display_Segment `(v  1 e 1 0 ]
+"627
+[v _Data2Array Data2Array `(v  1 e 1 0 ]
+"6 D:\P I  C\Project\Li-ion Charger\Li-ion_Charger.X\PWM.c
+[v _PWM_Init PWM_Init `(v  1 e 1 0 ]
+"38
+[v _PWM_Start PWM_Start `(v  1 e 1 0 ]
+"4 D:\P I  C\Project\Li-ion Charger\Li-ion_Charger.X\TMR0.c
+[v _TIM0_init TIM0_init `(v  1 e 1 0 ]
+"15
+[v _TIM0_Start TIM0_Start `(v  1 e 1 0 ]
+"59 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f883.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"228
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"290
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"380
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"693
+[v _T2CON T2CON `VEuc  1 e 1 @18 ]
+"848
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @21 ]
+"862
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @23 ]
+"1075
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @27 ]
+"1089
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @29 ]
+"1159
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+"1166
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+"1267
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"1337
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1399
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1461
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1883
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+"2812
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+"2819
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
+"3229
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"3273
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+[s S22 . 5 `ui 1 Period 2 0 `ui 1 Ton 2 2 `uc 1 CCP 1 4 ]
+"34 D:\P I  C\Project\Li-ion Charger\Li-ion_Charger.X\Li_ion_main.c
+[v _PWM_1 PWM_1 `S22  1 e 5 0 ]
+"62
+[v _Segment_Tab Segment_Tab `DC[24]uc  1 e 24 0 ]
+"87
+[v _Display_Array Display_Array `[4]uc  1 e 4 0 ]
+"88
+[v _SolarFlag SolarFlag `uc  1 e 1 0 ]
+"90
+[v _State State `uc  1 e 1 0 ]
+"91
+[v _PWM_Value PWM_Value `ui  1 e 2 0 ]
+"104
+[v _AD_Value AD_Value `ui  1 e 2 0 ]
+"105
+[v _Display_Volt Display_Volt `ui  1 e 2 0 ]
+"106
+[v _Display_Current Display_Current `ui  1 e 2 0 ]
+"108
+[v _Display_Change Display_Change `uc  1 e 1 0 ]
+"109
+[v _main main `(v  1 e 1 0 ]
+{
+"156
+} 0
+"158
+[v _WaitCharge_Function WaitCharge_Function `(v  1 e 1 0 ]
+{
+"182
+[v WaitCharge_Function@i i `uc  1 a 1 31 ]
+"160
+[v WaitCharge_Function@Volt_Value Volt_Value `ui  1 a 2 32 ]
+"161
+[v WaitCharge_Function@Total_Count Total_Count `uc  1 a 1 30 ]
+"222
+} 0
+"352
+[v _VoltCharge_Function VoltCharge_Function `(v  1 e 1 0 ]
+{
+"413
+[v VoltCharge_Function@i_141 i `uc  1 a 1 37 ]
+"401
+[v VoltCharge_Function@A_To_V A_To_V `ul  1 a 4 30 ]
+"376
+[v VoltCharge_Function@i i `uc  1 a 1 36 ]
+"355
+[v VoltCharge_Function@Current_Value Current_Value `ui  1 a 2 40 ]
+"354
+[v VoltCharge_Function@Volt_Value Volt_Value `ui  1 a 2 38 ]
+"357
+[v VoltCharge_Function@C_Count C_Count `uc  1 a 1 35 ]
+"356
+[v VoltCharge_Function@Total_Count Total_Count `uc  1 a 1 34 ]
+"485
+} 0
+"4 D:\P I  C\Project\Li-ion Charger\Li-ion_Charger.X\TMR0.c
+[v _TIM0_init TIM0_init `(v  1 e 1 0 ]
+{
+"13
+} 0
+"15
+[v _TIM0_Start TIM0_Start `(v  1 e 1 0 ]
+{
+"20
+} 0
+"38 D:\P I  C\Project\Li-ion Charger\Li-ion_Charger.X\PWM.c
+[v _PWM_Start PWM_Start `(v  1 e 1 0 ]
+{
+"41
+} 0
+"6
+[v _PWM_Init PWM_Init `(v  1 e 1 0 ]
+{
+[s S22 . 5 `ui 1 Period 2 0 `ui 1 Ton 2 2 `uc 1 CCP 1 4 ]
+[v PWM_Init@PWMData PWMData `*.4S22  1 a 1 wreg ]
+"11
+[v PWM_Init@Fclk Fclk `ul  1 a 4 36 ]
+"9
+[v PWM_Init@presc_val presc_val `[3]uc  1 a 3 33 ]
+"8
+[v PWM_Init@presc presc `[3]uc  1 a 3 30 ]
+"12
+[v PWM_Init@PR2_Val PR2_Val `ui  1 a 2 40 ]
+"10
+[v PWM_Init@index index `uc  1 a 1 42 ]
+"6
+[v PWM_Init@PWMData PWMData `*.4S22  1 a 1 wreg ]
+"7
+[v PWM_Init@F1231 F1231 `[3]uc  1 s 3 F1231 ]
+"8
+[v PWM_Init@F1233 F1233 `[3]uc  1 s 3 F1233 ]
+"6
+[v PWM_Init@PWMData PWMData `*.4S22  1 a 1 43 ]
+"36
+} 0
+"487 D:\P I  C\Project\Li-ion Charger\Li-ion_Charger.X\Li_ion_main.c
+[v _FullCharge_Function FullCharge_Function `(v  1 e 1 0 ]
+{
+"511
+[v FullCharge_Function@i i `uc  1 a 1 31 ]
+"489
+[v FullCharge_Function@Volt_Value Volt_Value `ui  1 a 2 32 ]
+"490
+[v FullCharge_Function@Total_Count Total_Count `uc  1 a 1 30 ]
+"555
+} 0
+"224
+[v _CurrentCharge_Function CurrentCharge_Function `(v  1 e 1 0 ]
+{
+"299
+[v CurrentCharge_Function@i_133 i `uc  1 a 1 37 ]
+"273
+[v CurrentCharge_Function@A_To_V A_To_V `ul  1 a 4 30 ]
+"248
+[v CurrentCharge_Function@i i `uc  1 a 1 36 ]
+"227
+[v CurrentCharge_Function@Current_Value Current_Value `ui  1 a 2 40 ]
+"226
+[v CurrentCharge_Function@Volt_Value Volt_Value `ui  1 a 2 38 ]
+"229
+[v CurrentCharge_Function@C_Count C_Count `uc  1 a 1 35 ]
+"228
+[v CurrentCharge_Function@Total_Count Total_Count `uc  1 a 1 34 ]
+"350
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+{
+"17
+[v ___lmul@product product `ul  1 a 4 9 ]
+"15
+[v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
+[v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
+"129
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 22 ]
+"11
+[v ___lldiv@counter counter `uc  1 a 1 26 ]
+"5
+[v ___lldiv@divisor divisor `ul  1 p 4 13 ]
+[v ___lldiv@dividend dividend `ul  1 p 4 17 ]
+"30
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"10
+[v ___aldiv@quotient quotient `l  1 a 4 24 ]
+"11
+[v ___aldiv@sign sign `uc  1 a 1 23 ]
+[v ___aldiv@counter counter `uc  1 a 1 22 ]
+"5
+[v ___aldiv@divisor divisor `l  1 p 4 13 ]
+[v ___aldiv@dividend dividend `l  1 p 4 17 ]
+"41
+} 0
+"627 D:\P I  C\Project\Li-ion Charger\Li-ion_Charger.X\Li_ion_main.c
+[v _Data2Array Data2Array `(v  1 e 1 0 ]
+{
+[v Data2Array@d_Array d_Array `*.4uc  1 a 1 wreg ]
+[v Data2Array@d_Array d_Array `*.4uc  1 a 1 wreg ]
+[v Data2Array@data data `ui  1 p 2 0 ]
+"629
+[v Data2Array@d_Array d_Array `*.4uc  1 a 1 2 ]
+"646
+} 0
+"557
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"559
+[v ISR@Display_Count Display_Count `i  1 s 2 Display_Count ]
+"571
+} 0
+"574
+[v _Display_Segment Display_Segment `(v  1 e 1 0 ]
+{
+[v Display_Segment@Display_Array Display_Array `*.4uc  1 a 1 wreg ]
+[v Display_Segment@Display_Array Display_Array `*.4uc  1 a 1 wreg ]
+"576
+[v Display_Segment@count count `uc  1 s 1 count ]
+[v Display_Segment@Display_Array Display_Array `*.4uc  1 a 1 2 ]
+"623
+} 0
