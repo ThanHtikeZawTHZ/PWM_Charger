@@ -61,6 +61,10 @@ PWM_TypeDef PWM_1;
 
 #define Current_Limit   20  //(20 - 2.0 Amp)
 #define Current_Full_Limit 2    // (2 - 0.2 Amp)
+
+#define Volt_Limit  126
+
+const unsigned char Volt_Level[5];
 // Built Segment Table Array to make ease access to get Display Data
 const char Segment_Tab[24]={  _A | _B |_C | _D | _E | _F     , //0
                                    _B |_C                    , //1
