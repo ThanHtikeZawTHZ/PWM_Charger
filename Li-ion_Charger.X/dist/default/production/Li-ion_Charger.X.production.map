@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.20\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\Li-ion_Charger.X.production.sym \
   --cmf=dist/default/production\Li-ion_Charger.X.production.cmf -z -Q16F883 \
-  -oC:\Users\thanh\AppData\Local\Temp\sfuk.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\thanh\AppData\Local\Temp\sjv0.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Li-ion_Charger.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0A0h-0EFh -pstack=STACK \
   -ACODE=00h-07FFhx2 -ASTRCODE=00h-0FFFh -ASTRING=00h-0FFhx16 \
@@ -18,7 +18,7 @@ Linker command line:
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
   -pfunctab=ENTRY -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 \
   -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\thanh\AppData\Local\Temp\sfuk.o \
+  C:\Users\thanh\AppData\Local\Temp\sjv0.o \
   dist/default/production\Li-ion_Charger.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F883
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\thanh\AppData\Local\Temp\sfuk.o
+C:\Users\thanh\AppData\Local\Temp\sjv0.o
                 end_init                             11       11        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             2007     2007        2        0       4
@@ -461,7 +461,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 109 in file "Li_ion_main.c"
+		line 112 in file "Li_ion_main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -497,7 +497,7 @@ Total ram usage:        2 bytes
 
  *************** function _WaitCharge_Function *****************
  Defined at:
-		line 158 in file "Li_ion_main.c"
+		line 161 in file "Li_ion_main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -531,7 +531,7 @@ Total ram usage:        6 bytes
 
  *************** function _VoltCharge_Function *****************
  Defined at:
-		line 352 in file "Li_ion_main.c"
+		line 355 in file "Li_ion_main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -699,7 +699,7 @@ Total ram usage:       16 bytes
 
  *************** function _FullCharge_Function *****************
  Defined at:
-		line 487 in file "Li_ion_main.c"
+		line 490 in file "Li_ion_main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -733,7 +733,7 @@ Total ram usage:        6 bytes
 
  *************** function _CurrentCharge_Function *****************
  Defined at:
-		line 224 in file "Li_ion_main.c"
+		line 227 in file "Li_ion_main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -881,7 +881,7 @@ Total ram usage:       15 bytes
 
  *************** function _Data2Array *****************
  Defined at:
-		line 627 in file "Li_ion_main.c"
+		line 630 in file "Li_ion_main.c"
  Parameters:    Size  Location     Type
   d_Array         1    wreg     PTR unsigned char 
 		 -> Display_Array(4), 
@@ -917,7 +917,7 @@ Total ram usage:        3 bytes
 
  *************** function _ISR *****************
  Defined at:
-		line 557 in file "Li_ion_main.c"
+		line 560 in file "Li_ion_main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -947,7 +947,7 @@ Total ram usage:        4 bytes
 
  *************** function _Display_Segment *****************
  Defined at:
-		line 574 in file "Li_ion_main.c"
+		line 577 in file "Li_ion_main.c"
  Parameters:    Size  Location     Type
   Display_Arra    1    wreg     PTR unsigned char 
 		 -> Display_Array(4), 

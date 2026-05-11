@@ -58,6 +58,9 @@ PWM_TypeDef PWM_1;
 #define ADC_14	512
 
 #define Solar_Detect    0
+
+#define Current_Limit   20  //(20 - 2.0 Amp)
+#define Current_Full_Limit 2    // (2 - 0.2 Amp)
 // Built Segment Table Array to make ease access to get Display Data
 const char Segment_Tab[24]={  _A | _B |_C | _D | _E | _F     , //0
                                    _B |_C                    , //1
@@ -273,14 +276,14 @@ void CurrentCharge_Function(void)
             unsigned long A_To_V = ((unsigned long)Current_Value * 500) / 1023;
             Display_Current = (A_To_V * 10) / 24;
             Current_Value = 0;
-            if(Display_Current<20 && PWM_Value<900)
+            if(Display_Current < Current_Limit && PWM_Value < 900)
             {
                 PWM_Value++;
                 CCPR1L = PWM_Value>>2;
                 CCP1CON= (PWM_Value &0x3)<<4 | // Ton LSB 2 bits
                          0xC;  // PWM Mode
             }
-            else if(Display_Current>20 && PWM_Value>5)
+            else if(Display_Current > Current_Limit && PWM_Value > 5)
             {
                 PWM_Value--;
                 CCPR1L = PWM_Value>>2;
@@ -401,7 +404,7 @@ void VoltCharge_Function(void)
             unsigned long A_To_V = ((unsigned long)Current_Value * 500) / 1023;
             Display_Current = (A_To_V * 10) / 24;
             Current_Value = 0;
-            if(Display_Current<=2)
+            if(Display_Current <= Current_Full_Limit)
             {
                 State=Full_Charge;
             }
@@ -425,7 +428,7 @@ void VoltCharge_Function(void)
             Total_Count=0;
             Volt_Value=Volt_Value>>2;
             Display_Volt=((long)140*Volt_Value)/ADC_14;  
-            if(Display_Volt<126 && PWM_Value<900 && Display_Current < 20)
+            if(Display_Volt<126 && PWM_Value<900 && Display_Current < Current_Limit)
             {
                 PWM_Value++;
                 CCPR1L = PWM_Value>>2;
@@ -443,7 +446,7 @@ void VoltCharge_Function(void)
             {
                 // do nothing
             }
-            if(Display_Current>20 && PWM_Value>5)
+            if(Display_Current > Current_Limit && PWM_Value > 5)
             {
                 PWM_Value--;
                 CCPR1L = PWM_Value>>2;

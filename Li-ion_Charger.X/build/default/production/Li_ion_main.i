@@ -2433,7 +2433,7 @@ __attribute__((inline)) void PWM_InterruptEnabled(void);
 
 
 PWM_TypeDef PWM_1;
-# 62 "Li_ion_main.c"
+# 65 "Li_ion_main.c"
 const char Segment_Tab[24]={ (1<<5) | (1<<7) |(1<<1) | (1<<3) | (1<<4) | (1<<6) ,
                                    (1<<7) |(1<<1) ,
                               (1<<5) | (1<<7) | (1<<3) | (1<<4) | (1<<0),
@@ -2634,18 +2634,18 @@ void CurrentCharge_Function(void)
         {
             C_Count=0;
             Current_Value=Current_Value>>2;
-# 273 "Li_ion_main.c"
+# 276 "Li_ion_main.c"
             unsigned long A_To_V = ((unsigned long)Current_Value * 500) / 1023;
             Display_Current = (A_To_V * 10) / 24;
             Current_Value = 0;
-            if(Display_Current<20 && PWM_Value<900)
+            if(Display_Current < 20 && PWM_Value < 900)
             {
                 PWM_Value++;
                 CCPR1L = PWM_Value>>2;
                 CCP1CON= (PWM_Value &0x3)<<4 |
                          0xC;
             }
-            else if(Display_Current>20 && PWM_Value>5)
+            else if(Display_Current > 20 && PWM_Value > 5)
             {
                 PWM_Value--;
                 CCPR1L = PWM_Value>>2;
@@ -2752,11 +2752,11 @@ void VoltCharge_Function(void)
         {
             C_Count=0;
             Current_Value=Current_Value>>2;
-# 401 "Li_ion_main.c"
+# 404 "Li_ion_main.c"
             unsigned long A_To_V = ((unsigned long)Current_Value * 500) / 1023;
             Display_Current = (A_To_V * 10) / 24;
             Current_Value = 0;
-            if(Display_Current<=2)
+            if(Display_Current <= 2)
             {
                 State=Full_Charge;
             }
@@ -2798,7 +2798,7 @@ void VoltCharge_Function(void)
             {
 
             }
-            if(Display_Current>20 && PWM_Value>5)
+            if(Display_Current > 20 && PWM_Value > 5)
             {
                 PWM_Value--;
                 CCPR1L = PWM_Value>>2;
